@@ -5,9 +5,9 @@
 	require 'cores/misc/connect.php';
 	require 'cores/misc/function.php'; 
 
-	$dataProfil = getAdminProfil($_SESSION['user_id']);
+	$dataProfil = getPencakerProfil($_SESSION['user_id']);
 
-	if (!isset($_SESSION['username']) || $_SESSION['hak_akses'] != 'admin') {
+	if (!isset($_SESSION['username']) || $_SESSION['hak_akses'] != 'pencaker') {
 		session_unset();
 		$_SESSION['gagal'] = 'Maaf anda tidak memiliki izin untuk mengakses halaman ini';
 		header('Location:main.php?page=home');
@@ -21,14 +21,14 @@
 <head>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>Administrator</title>
+	<title>Pencari Kerja</title>
 	<link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/vendors/datatables/datatables.min.css">
 	<link rel="stylesheet" href="assets/vendors/air-datepicker/dist/css/datepicker.min.css">
 	<link rel="stylesheet" href="assets/css/app.css">
 </head>
 <body>
-	<?php include "views/partials/admin-navbar.php"; ?>
+	<?php include "views/partials/pencaker-navbar.php"; ?>
 
 	<div class="container main-content">
 		
@@ -42,21 +42,9 @@
 				$page = $_GET['page'];
 				
 				if ($page == 'home') {
-					include "views/admin/home.php";
+					include "views/pencaker/home.php";
 				} elseif ($page == 'profil') {
-					include "views/admin/profil.php";
-				} elseif ($page == 'akun') {
-					include "views/admin/list-akun.php";
-				} elseif ($page == 'banned') {
-					include "views/admin/user-akun/banned.php";
-				} elseif ($page == 'aktivasi') {
-					include "views/admin/user-akun/aktivasi.php";
-				} elseif ($page == 'event') {
-					include "views/admin/event-berita/tambah-event.php";
-				} elseif ($page == 'list-event') {
-					include "views/admin/event-berita/list-event.php";
-				} elseif ($page == 'publish') {
-					include "views/admin/event-berita/publish.php";
+					include "views/pencaker/profil.php";
 				}
 
 			}

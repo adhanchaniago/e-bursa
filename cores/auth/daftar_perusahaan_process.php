@@ -10,6 +10,8 @@
 	// require PHPMailer
 	require '../misc/phpmailer.php';
 
+	// var_dump($_POST); die();
+
 	// form validation
 	if (empty($_POST['username'])) {
 		$_SESSION['gagal'] = 'Kolom username tidak boleh kosong!';
@@ -27,16 +29,20 @@
 		$_SESSION['gagal'] = 'Kolom email tidak boleh kosong!';
 		header('Location:../../main.php?page=daftar');
 		die();
-	} elseif (empty($_POST['nik'])) {
-		$_SESSION['gagal'] = 'Kolom nik tidak boleh kosong!';
+	} elseif (empty($_POST['siup'])) {
+		$_SESSION['gagal'] = 'Kolom siup tidak boleh kosong!';
+		header('Location:../../main.php?page=daftar');
+		die();
+	} elseif (empty($_POST['situ'])) {
+		$_SESSION['gagal'] = 'Kolom situ tidak boleh kosong!';
 		header('Location:../../main.php?page=daftar');
 		die();
 	} elseif (empty($_POST['nama'])) {
-		$_SESSION['gagal'] = 'Kolom nama tidak boleh kosong!';
+		$_SESSION['gagal'] = 'Kolom nama perusahaan tidak boleh kosong!';
 		header('Location:../../main.php?page=daftar');
 		die();
-	} elseif (empty($_POST['jekel'])) {
-		$_SESSION['gagal'] = 'Kolom jenis kelamin tidak boleh kosong!';
+	} elseif (empty($_POST['bidang'])) {
+		$_SESSION['gagal'] = 'Kolom bidang usaha tidak boleh kosong!';
 		header('Location:../../main.php?page=daftar');
 		die();
 	}
@@ -46,9 +52,10 @@
 	$password = sanitizeThis($_POST['password']);
 	$password_r = sanitizeThis($_POST['password-ulang']);
 	$email = sanitizeThis($_POST['email']);
-	$nik = sanitizeThis($_POST['nik']);
+	$siup = sanitizeThis($_POST['siup']);
+	$situ = sanitizeThis($_POST['situ']);
 	$nama = sanitizeThis($_POST['nama']);
-	$jekel = sanitizeThis($_POST['jekel']);
+	$bidang = sanitizeThis($_POST['bidang']);
 	$password_md5 = md5($password);
 	$token_aktivasi = generateToken();
 	$tanggal = date('Y-m-d');
@@ -85,7 +92,7 @@
 	$proces2 = mysqli_query($conn, $query2);
 
 	// input data ke tabel profil_pencaker
-	$query3 = "INSERT INTO profil_pencaker (user_akun_id, nik, nama, jenis_kelamin, email, dibuat_pada) VALUES('$last_akun_id', '$nik', '$nama', '$jekel', '$email', '$tanggal')";
+	$query3 = "INSERT INTO profil_perusahaan (user_akun_id, nama_perusahaan, no_siuo, no_situ, bidang_usaha, dibuat_pada) VALUES('$last_akun_id', '$nama', '$siup', '$situ', '$bidang', '$tanggal')";
 	$proces3 = mysqli_query($conn, $query3);
 
 	// cek apakah ada proses input ada yang gagal

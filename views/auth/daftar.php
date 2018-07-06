@@ -68,21 +68,51 @@
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">Daftar Perusahaan Baru</h5>
+				<h5 class="modal-title" id="exampleModalLabel">DAFTAR AKUN PERUSAHAAN BARU</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
-			<div class="modal-body">
-				...
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-				<button type="button" class="btn btn-primary">Save changes</button>
-			</div>
+			<form action="cores/auth/daftar_perusahaan_process.php" method="POST">
+				<div class="modal-body">
+					<div class="form-group">
+						<label for="username">Username</label>
+						<input type="text" class="form-control" name="username" id="username">
+					</div>
+					<div class="form-group">
+						<label for="password">Password</label>
+						<input type="password" class="form-control" name="password" id="password">
+					</div>
+					<div class="form-group">
+						<label for="password-ulang">Konfirmasi Password</label>
+						<input type="password" class="form-control" name="password-ulang" id="password-ulang">
+					</div>
+					<div class="form-group">
+						<label for="email">Alamat Email</label>
+						<input type="text" class="form-control" name="email" id="email">
+					</div>
+					<div class="form-group">
+						<label for="siup">Nomor SIUP</label>
+						<input type="text" class="form-control" name="siup" id="siup">
+					</div>
+					<div class="form-group">
+						<label for="situ">Nomor SITU</label>
+						<input type="text" class="form-control" name="situ" id="situ">
+					</div>
+					<div class="form-group">
+						<label for="nama">Nama Perusahaan</label>
+						<input type="text" class="form-control" name="nama" id="nama">
+					</div>
+					<div class="form-group">
+						<label for="bidang">Bidang Usaha</label>
+						<input type="text" class="form-control" name="bidang" id="bidang">
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">BATAL</button>
+					<button type="submit" class="btn btn-success float-left">DAFTAR AKUN</button>
+				</div>
+			</form>
 		</div>
 	</div>
 </div>
-
-
-<!-- http://localhost/e-bursa/main.php?page=aktivasi&token=b3c2d2fea836676d24f7da1ebbac7b&user=28 -->

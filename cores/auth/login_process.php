@@ -39,7 +39,6 @@
 			die();
 		}
 		if ($hakakses == 'admin') {
-			$profil = getAdminProfil($data['id']);
 			$_SESSION['user_id'] = $data['id'];		
 			$_SESSION['username'] = $data['username'];
 			$_SESSION['hak_akses'] = $hakakses;
@@ -47,7 +46,12 @@
 			header('Location:../../admin-dashboard.php?page=home');
 			die();
 		} elseif ($hakakses == 'pencaker') {
-			echo "pencaker";
+			$_SESSION['user_id'] = $data['id'];		
+			$_SESSION['username'] = $data['username'];
+			$_SESSION['hak_akses'] = $hakakses;
+			$_SESSION['sukses'] = 'Selamat Datang.';
+			header('Location:../../pencaker-dashboard.php?page=home');
+			die();
 		} elseif ($hakakses == 'perusahaan') {
 			echo "perusahaan";
 		}

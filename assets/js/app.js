@@ -14,8 +14,34 @@ $(function(){
 		language: 'en'
 	});
 
+	$('.tanggal_pl').datepicker({
+		dateFormat: "yyyy-mm-dd",
+		autoClose: true,
+		language: 'en'
+	});
+
 	$('#tabel-data-user-akun').dataTable({
 		responsive: true,
+		language: {
+			url: '//cdn.datatables.net/plug-ins/1.10.16/i18n/Indonesian.json'
+		}
+	});
+
+	$('#tabel-data-pendidikan-formal').dataTable({
+		responsive: true,
+		// lengthChange: false,
+		info: false,
+		searching: false,
+		language: {
+			url: '//cdn.datatables.net/plug-ins/1.10.16/i18n/Indonesian.json'
+		}
+	});
+
+	$('#tabel-data-pendidikan-nonformal').dataTable({
+		responsive: true,
+		// lengthChange: false,
+		info: false,
+		searching: false,
 		language: {
 			url: '//cdn.datatables.net/plug-ins/1.10.16/i18n/Indonesian.json'
 		}

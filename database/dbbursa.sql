@@ -102,9 +102,11 @@ CREATE TABLE `pendidikan_formal` (
   `dibuat_pada` date NOT NULL,
   PRIMARY KEY (`id`),
   KEY `profil_pencaker_id` (`profil_pencaker_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 /*Data for the table `pendidikan_formal` */
+
+insert  into `pendidikan_formal`(`id`,`profil_pencaker_id`,`tingkat_pendidikan`,`nama_sekolah`,`jurusan`,`tahun_masuk`,`tahun_lulus`,`alamat_sekolah`,`dibuat_pada`) values (1,4,'SD','SDN 45 Bungo Pasang','-','2000','2006','Padang','0000-00-00'),(2,4,'SMP','SMP Negeri 7 Padang','-','2006','2009','Padang','2018-07-06'),(3,4,'SMK','SMK Negeri 5 Padang','Teknik Elektronika','2009','2012','Padang','2018-07-06'),(4,4,'S1','STMIK Indonesia ','Sistem Informasi','2013','2018','Padang','2018-07-06');
 
 /*Table structure for table `pendidikan_nonformal` */
 
@@ -121,9 +123,11 @@ CREATE TABLE `pendidikan_nonformal` (
   `dibuat_pada` date NOT NULL,
   PRIMARY KEY (`id`),
   KEY `profil_pencaker_id` (`profil_pencaker_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 /*Data for the table `pendidikan_nonformal` */
+
+insert  into `pendidikan_nonformal`(`id`,`profil_pencaker_id`,`nama_kegiatan`,`penyelenggara`,`tanggal_mulai`,`tanggal_selesai`,`tempat_kegiatan`,`dibuat_pada`) values (1,4,'Diklat','Dinas Tenaga Kerja','2018-07-02','2018-07-05','Padang','2018-07-06');
 
 /*Table structure for table `pengalaman_kerja` */
 
@@ -195,7 +199,7 @@ CREATE TABLE `profil_pencaker` (
 
 /*Data for the table `profil_pencaker` */
 
-insert  into `profil_pencaker`(`id`,`user_akun_id`,`nik`,`nama`,`jenis_kelamin`,`tempat_lahir`,`tanggal_lahir`,`agama`,`alamat`,`telepon`,`quote`,`email`,`photo`,`dibuat_pada`) values (4,30,'11221122222','Adi Raka Siwi','Pria',NULL,NULL,NULL,NULL,NULL,NULL,'',NULL,'0000-00-00');
+insert  into `profil_pencaker`(`id`,`user_akun_id`,`nik`,`nama`,`jenis_kelamin`,`tempat_lahir`,`tanggal_lahir`,`agama`,`alamat`,`telepon`,`quote`,`email`,`photo`,`dibuat_pada`) values (4,30,'1371112904940006','Adi Raka Siwi, S.Kom','Pria','Padang','1994-04-29','Islam','Padang','081268280648','Talk Less Do More','adiraka8@gmail.com','81d722468d359107ac2d.jpg','0000-00-00');
 
 /*Table structure for table `profil_perusahaan` */
 
@@ -205,17 +209,17 @@ CREATE TABLE `profil_perusahaan` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_akun_id` int(11) NOT NULL,
   `nama_perusahaan` varchar(50) NOT NULL,
-  `no_siup` varchar(20) DEFAULT NULL,
-  `no_situ` varchar(20) DEFAULT NULL,
+  `no_siup` varchar(20) NOT NULL,
+  `no_situ` varchar(20) NOT NULL,
   `bidang_usaha` varchar(50) NOT NULL,
-  `alamat` text NOT NULL,
-  `telepon` varchar(20) NOT NULL,
+  `alamat` text,
+  `telepon` varchar(20) DEFAULT NULL,
   `deskripsi_perusahaan` text,
   `website` varchar(50) DEFAULT NULL,
-  `email` varchar(50) DEFAULT NULL,
+  `email` varchar(50) NOT NULL,
   `logo_perusahaan` varchar(100) DEFAULT NULL,
   `slogan` varchar(50) DEFAULT NULL,
-  `tanggal_dibuat` date NOT NULL,
+  `dibuat_pada` date NOT NULL,
   PRIMARY KEY (`id`),
   KEY `user_akun_id` (`user_akun_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;

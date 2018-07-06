@@ -21,6 +21,14 @@
 		return $data;
 	}
 
+	function getPencakerProfil($id) {
+		$conn = koneksi();
+		$sql = "SELECT * FROM profil_pencaker WHERE user_akun_id = '$id'";
+		$proc = mysqli_query($conn, $sql);
+		$data = mysqli_fetch_assoc($proc);
+		return $data;
+	}
+
 	function sanitizeThis($string) {
 		$conn = koneksi();
 		$output1 = mysqli_real_escape_string($conn, $string);
@@ -50,6 +58,14 @@
 		$proc = mysqli_query($conn, $sql);
 		$data = mysqli_fetch_assoc($proc);
 		return $data['status'];
+	}
+
+	function pencakerProfID($user_id) {
+		$conn = koneksi();
+		$sql = "SELECT id FROM profil_pencaker WHERE user_akun_id = '$user_id'";
+		$proc = mysqli_query($conn, $sql);
+		$data = mysqli_fetch_assoc($proc);
+		return $data['id'];
 	}
 
 ?>
