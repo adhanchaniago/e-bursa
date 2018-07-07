@@ -279,7 +279,37 @@
 						<p>Silahkan isi data berikut dengan data yang valid:</p> <hr>
 						<div class="row">
 							<div class="col-md-8">
-								
+								<form action="cores/pencaker/profil/tambah-pengalaman-kerja.php" method="POST">
+									<input type="hidden" name="user_id" value="<?php echo $_SESSION["user_id"] ?>">
+									<div class="from-group">
+										<label for="nama">Nama Perusahaan</label>
+										<input type="text" name="nama" id="nama" class="form-control">
+									</div>
+									<div class="form-group">
+										<label for="jabatan">Jabatan</label>
+										<input type="text" name="jabatan" id="jabatan" class="form-control">
+									</div>
+									<div class="form-group">
+										<label for="deskripsi">Deskripsi Jabatan</label>
+										<input type="text" name="deskripsi" id="deskripsi" class="form-control">
+									</div>
+									<div class="form-group">
+										<label for="bidang">Bidang Perusahaan</label>
+										<input type="text" name="bidang" id="bidang" class="form-control">
+									</div>
+									<div class="form-group">
+										<label for="masuk">Tanggal Masuk</label>
+										<input type="text" name="masuk" id="masuk" class="form-control tanggal_pl" readonly>
+									</div>
+									<div class="form-group">
+										<label for="keluar">Tanggal Keluar</label>
+										<input type="text" name="keluar" id="keluar" class="form-control tanggal_pl" readonly>
+									</div>
+									<div class="form-group text-right">
+										<button type="reset" class="btn btn-sm btn-default">RESET</button>
+										<button type="submit" class="btn btn-success">SIMPAN</button>
+									</div>
+								</form>
 							</div>
 							<div class="col-md-4">
 								<div class="card">
@@ -287,6 +317,53 @@
 										<p>PERHATIAN!</p>
 										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis vero dignissimos, ipsam odio aspernatur deserunt iure consectetur veniam iusto in officia officiis ipsum repellendus eligendi dolorum. Tempore obcaecati iusto quia.
 									</div>
+								</div>
+							</div>
+						</div><hr>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="table-responsive">
+									<table class="table table-bordered display nowrap" id="tabel-data-pengalaman-kerja" style="width:100%">
+										<thead>
+											<tr>
+												<th>#</th>
+												<th>Nama Perusahaan</th>
+												<th>Jabatan</th>
+												<th>Deskripsi Jabatan</th>
+												<th>Bidang Perusahaan</th>
+												<th>Tgl Masuk</th>
+												<th>Tgl Keluar</th>
+												<th>Aksi</th>
+											</tr>
+										</thead>
+										<tbody>
+											<?php  
+
+												$query3 = "SELECT * FROM pengalaman_kerja  WHERE profil_pencaker_id = '$id'";
+												$process3 = mysqli_query($conn, $query3);
+												while($row3 = mysqli_fetch_array($process3)) {
+													$list_data3[] = $row3;
+												}
+												foreach ($list_data3 as $key => $value) {
+											?>
+												<tr>
+													<td class="text-center"><?php echo $key+1; ?></td>
+													<td><?php echo $value['nama_perusahaan'] ?></td>
+													<td><?php echo $value['jabatan'] ?></td>
+													<td><?php echo $value['deskripsi_jabatan'] ?></td>
+													<td><?php echo $value['bidang_perusahaan'] ?></td>
+													<td><?php echo $value['tanggal_masuk'] ?></td>
+													<td><?php echo $value['tanggal_keluar'] ?></td>
+													<td>
+														<a href="" class="btn btn-success btn-sm">E</a>&nbsp;
+														<a href="" class="btn btn-danger btn-sm">D</a>
+													</td>
+												</tr>
+											<?php
+												}
+											?>
+										</tbody>
+									</table>
 								</div>
 							</div>
 						</div>

@@ -26,6 +26,7 @@
 	<link rel="stylesheet" href="assets/vendors/datatables/datatables.min.css">
 	<link rel="stylesheet" href="assets/vendors/air-datepicker/dist/css/datepicker.min.css">
 	<link rel="stylesheet" href="assets/css/app.css">
+	<script src="assets/vendors/jquery/js/jquery.min.js"></script>
 </head>
 <body>
 	<?php include "views/partials/pencaker-navbar.php"; ?>
@@ -59,7 +60,7 @@
 		</div>
 	</footer>
 
-	<script src="assets/vendors/jquery/js/jquery.min.js"></script>
+	
 	<script src="assets/vendors/bootstrap/js/bootstrap.min.js"></script>
 	<script src="assets/vendors/datatables/datatables.min.js"></script>
 	<script src="assets/vendors/air-datepicker/dist/js/datepicker.min.js"></script>

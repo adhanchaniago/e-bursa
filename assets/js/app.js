@@ -1,4 +1,8 @@
-$(function(){
+$(document).ready(function() {
+
+	$('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
+        $.fn.dataTable.tables( {visible: true, api: true} ).columns.adjust();
+    } );
 
 	$.fn.datepicker.language['en'] = {
 		days: ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'],
@@ -29,7 +33,6 @@ $(function(){
 
 	$('#tabel-data-pendidikan-formal').dataTable({
 		responsive: true,
-		// lengthChange: false,
 		info: false,
 		searching: false,
 		language: {
@@ -37,9 +40,17 @@ $(function(){
 		}
 	});
 
-	$('#tabel-data-pendidikan-nonformal').dataTable({
+		$('#tabel-data-pendidikan-nonformal').dataTable({
+			responsive: true,
+			info: false,
+			searching: false,
+			language: {
+				url: '//cdn.datatables.net/plug-ins/1.10.16/i18n/Indonesian.json'
+			}
+		});
+
+	$('#tabel-data-pengalaman-kerja').dataTable({
 		responsive: true,
-		// lengthChange: false,
 		info: false,
 		searching: false,
 		language: {
