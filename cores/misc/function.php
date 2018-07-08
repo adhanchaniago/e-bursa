@@ -29,6 +29,14 @@
 		return $data;
 	}
 
+	function getPerusahaanProfil($id) {
+		$conn = koneksi();
+		$sql = "SELECT * FROM profil_perusahaan WHERE user_akun_id = '$id'";
+		$proc = mysqli_query($conn, $sql);
+		$data = mysqli_fetch_assoc($proc);
+		return $data;
+	}
+
 	function sanitizeThis($string) {
 		$conn = koneksi();
 		$output1 = mysqli_real_escape_string($conn, $string);

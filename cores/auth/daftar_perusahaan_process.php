@@ -82,18 +82,19 @@
 	$flag = true;
 
 	// input data ke tabel user_Akun
-	$query1 = "INSERT INTO user_akun (hak_akses_id, username, password, status, aktivasi, dibuat_pada) VALUES('2', '$username', '$password_md5', '1', '0', '$tanggal')";
-	$proces1 = mysqli_query($conn, $query1);
+	$query1 = "INSERT INTO user_akun (hak_akses_id, username, password, status, aktivasi, dibuat_pada) VALUES('3', '$username', '$password_md5', '1', '0', '$tanggal')";
+	$proces1 = mysqli_query($conn, $query1) or die(mysqli_error($conn));
 
 	$last_akun_id = mysqli_insert_id($conn);
 
 	// input data ke tabel aktivasi
 	$query2 = "INSERT INTO aktivasi (user_akun_id, token, status) VALUES('$last_akun_id', '$token_aktivasi', '0')";
-	$proces2 = mysqli_query($conn, $query2);
+	$proces2 = mysqli_query($conn, $query2) or die(mysqli_error($conn));
 
 	// input data ke tabel profil_pencaker
-	$query3 = "INSERT INTO profil_perusahaan (user_akun_id, nama_perusahaan, no_siuo, no_situ, bidang_usaha, dibuat_pada) VALUES('$last_akun_id', '$nama', '$siup', '$situ', '$bidang', '$tanggal')";
-	$proces3 = mysqli_query($conn, $query3);
+	$r_email = $email_v['text'];
+	$query3 = "INSERT INTO profil_perusahaan (user_akun_id, nama_perusahaan, no_siup, no_situ, bidang_usaha, email, dibuat_pada) VALUES('$last_akun_id', '$nama', '$siup', '$situ', '$bidang', '$r_email', '$tanggal')";
+	$proces3 = mysqli_query($conn, $query3) or die(mysqli_error($conn));
 
 	// cek apakah ada proses input ada yang gagal
 	if (!$proces1 || !$proces2 || !$proces3) {

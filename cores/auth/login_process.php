@@ -53,7 +53,12 @@
 			header('Location:../../pencaker-dashboard.php?page=home');
 			die();
 		} elseif ($hakakses == 'perusahaan') {
-			echo "perusahaan";
+			$_SESSION['user_id'] = $data['id'];		
+			$_SESSION['username'] = $data['username'];
+			$_SESSION['hak_akses'] = $hakakses;
+			$_SESSION['sukses'] = 'Selamat Datang.';
+			header('Location:../../perusahaan-dashboard.php?page=home');
+			die();
 		}
 	} else {
 		$_SESSION['gagal'] = 'Username dan Password yang anda inputkan tidak terdaftar.';
