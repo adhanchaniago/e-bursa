@@ -46,6 +46,10 @@
 					include "views/perusahaan/home.php"; 
 				} elseif ($page == 'profil') {
 					include "views/perusahaan/profil.php";
+				} elseif ($page == 'loker') {
+					include "views/perusahaan/loker.php";
+				} elseif ($page == 'tambah-loker') {
+					include "views/perusahaan/tambah-loker.php";
 				}
 
 			}

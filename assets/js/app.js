@@ -24,6 +24,13 @@ $(document).ready(function() {
 		language: 'en'
 	});
 
+	$('#tabel-list-loker').dataTable({
+		responsive: true,
+		language: {
+			url: '//cdn.datatables.net/plug-ins/1.10.16/i18n/Indonesian.json'
+		}
+	});
+
 	$('#tabel-data-user-akun').dataTable({
 		responsive: true,
 		language: {
@@ -60,6 +67,18 @@ $(document).ready(function() {
 
 	tinymce.init({
 		selector: '#konten',
+		height: 300,
+		theme: 'modern',
+		plugins: [
+		"advlist autolink lists link image charmap print preview anchor",
+		"searchreplace visualblocks code fullscreen",
+		"insertdatetime media table contextmenu paste imagetools wordcount"
+		],
+		toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+	});
+
+	tinymce.init({
+		selector: '.konten-area',
 		height: 300,
 		theme: 'modern',
 		plugins: [

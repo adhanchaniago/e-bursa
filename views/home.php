@@ -12,70 +12,40 @@
 
 <div class="row">
 	<div class="col-md-9">
-		<h3 class="home-title">Daftar Lowongan Pekerjaan Terbaru</h3>
+		<h3 class="home-title">Artikel Informasi Terbaru</h3>
+		<?php  
+
+			$query = "SELECT * FROM info_berita";
+			$process = mysqli_query($conn, $query);
+			while($row = mysqli_fetch_array($process)) {
+				$list_data[] = $row;
+			}
+			foreach ($list_data as $key => $value) {
+		?>
 		<div class="row bt-mrg-10">
 			<div class="col-md-12">
 				<div class="card">
 					<div class="card-body">
-						<p class="post-title"><a href="#" class="">TITLE HERE</a></p>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos magnam vitae possimus labore est perferendis, doloribus ipsum similique perspiciatis? Iusto, sunt assumenda incidunt minima amet eligendi illum perspiciatis impedit maiores! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum laboriosam ea enim, sed, facilis veniam deserunt. Commodi tempora quae voluptate, fugiat rem. Sapiente, ipsum! Exercitationem culpa, iste cupiditate. Similique, pariatur.
-						</p>
-						<p class="post-time text-right">Pada : <?php echo date('d/m/Y H:i:s') ?></p>
+						<p class="post-title"><a href="#" class=""><?php echo $value['judul'] ?></a></p><hr>
+						<div><?php echo $value['konten'] ?></div><hr>
+						<p class="post-time text-right">Kategori : <?php echo $value['kategori'] ?> | Dipublish pada : <?php echo $value['tanggal'] ?></p>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="row bt-mrg-10">
-			<div class="col-md-12">
-				<div class="card">
-					<div class="card-body">
-						<p class="post-title"><a href="#" class="">TITLE HERE</a></p>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos magnam vitae possimus labore est perferendis, doloribus ipsum similique perspiciatis? Iusto, sunt assumenda incidunt minima amet eligendi illum perspiciatis impedit maiores! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum laboriosam ea enim, sed, facilis veniam deserunt. Commodi tempora quae voluptate, fugiat rem. Sapiente, ipsum! Exercitationem culpa, iste cupiditate. Similique, pariatur.
-						</p>
-						<p class="post-time text-right">Pada : <?php echo date('d/m/Y H:i:s') ?></p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row bt-mrg-10">
-			<div class="col-md-12">
-				<div class="card">
-					<div class="card-body">
-						<p class="post-title"><a href="#" class="">TITLE HERE</a></p>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos magnam vitae possimus labore est perferendis, doloribus ipsum similique perspiciatis? Iusto, sunt assumenda incidunt minima amet eligendi illum perspiciatis impedit maiores! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum laboriosam ea enim, sed, facilis veniam deserunt. Commodi tempora quae voluptate, fugiat rem. Sapiente, ipsum! Exercitationem culpa, iste cupiditate. Similique, pariatur.
-						</p>
-						<p class="post-time text-right">Pada : <?php echo date('d/m/Y H:i:s') ?></p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row bt-mrg-10">
-			<div class="col-md-12">
-				<div class="card">
-					<div class="card-body">
-						<p class="post-title"><a href="#" class="">TITLE HERE</a></p>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos magnam vitae possimus labore est perferendis, doloribus ipsum similique perspiciatis? Iusto, sunt assumenda incidunt minima amet eligendi illum perspiciatis impedit maiores! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum laboriosam ea enim, sed, facilis veniam deserunt. Commodi tempora quae voluptate, fugiat rem. Sapiente, ipsum! Exercitationem culpa, iste cupiditate. Similique, pariatur.
-						</p>
-						<p class="post-time text-right">Pada : <?php echo date('d/m/Y H:i:s') ?></p>
-					</div>
-				</div>
-			</div>
-		</div>
+		<?php
+			}
+		?>
 	</div>
 	<div class="col-md-3">
 		<div class="card">
 			<div class="card-header">
-				Lorem ipsum
+				Menu Utama
 			</div>
-			<div class="card-body">
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed eaque, non architecto. Pariatur mollitia necessitatibus nesciunt asperiores consequuntur sequi nihil voluptas ad, amet eveniet hic omnis, voluptates quam illo iusto.
-				</p>
-			</div>
+			<ul class="list-group">
+				<a href="?page=home" class="list-group-item">ARTIKEL/BERITA</a>
+				<a href="?page=home" class="list-group-item">LOWONGAN PEKERJAAN</a>
+			</ul>
 		</div>
 	</div>
 </div>

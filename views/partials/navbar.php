@@ -30,6 +30,10 @@
 				} else {
 					if ($_SESSION['hak_akses'] == 'admin') {
 						echo '<a class="btn btn-sm btn-outline-primary my-2 my-sm-0" href="admin-dashboard.php?page=home">DASHBOARD</a>';
+					} elseif ($_SESSION['hak_akses'] == 'pencaker') {
+						echo '<a class="btn btn-sm btn-outline-primary my-2 my-sm-0" href="pencaker-dashboard.php?page=home">DASHBOARD</a>';
+					} elseif ($_SESSION['hak_akses'] == 'perusahaan') {
+						echo '<a class="btn btn-sm btn-outline-primary my-2 my-sm-0" href="perusahaan-dashboard.php?page=home">DASHBOARD</a>';
 					}
 				}
 

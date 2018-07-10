@@ -76,4 +76,12 @@
 		return $data['id'];
 	}
 
+	function perusahaanProfID($user_id) {
+		$conn = koneksi();
+		$sql = "SELECT id FROM profil_perusahaan WHERE user_akun_id = '$user_id'";
+		$proc = mysqli_query($conn, $sql);
+		$data = mysqli_fetch_assoc($proc);
+		return $data['id'];
+	}
+
 ?>
