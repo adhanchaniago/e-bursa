@@ -12,40 +12,21 @@
 
 <div class="row">
 	<div class="col-md-9">
-		<h3 class="home-title">Artikel Informasi Terbaru</h3>
-		<?php  
-
-			$query = "SELECT * FROM info_berita";
-			$process = mysqli_query($conn, $query);
-			while($row = mysqli_fetch_array($process)) {
-				$list_data[] = $row;
-			}
-			foreach ($list_data as $key => $value) {
-		?>
-		<div class="row bt-mrg-10">
-			<div class="col-md-12">
-				<div class="card">
-					<div class="card-body">
-						<p class="post-title"><a href="#" class=""><?php echo $value['judul'] ?></a></p><hr>
-						<div><?php echo $value['konten'] ?></div><hr>
-						<p class="post-time text-right">Kategori : <?php echo $value['kategori'] ?> | Dipublish pada : <?php echo $value['tanggal'] ?></p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<?php
-			}
-		?>
+		<h3 class="home-title">Selamat Datang</h3>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, ipsum laudantium consequuntur, hic veniam ut repudiandae quaerat nulla beatae quo dolore dignissimos! Fuga earum quasi explicabo, tenetur deleniti quo quis.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex eveniet amet, illo. Nobis delectus vitae rem aliquid natus voluptatum recusandae quasi in pariatur. Deleniti ex veniam ipsam, laborum magnam. Tempora!
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore animi nemo saepe quas. Blanditiis ad velit laborum aut, obcaecati sequi nobis, error adipisci odit fuga cumque consectetur sed et accusantium.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, quo ducimus iure accusamus culpa cum adipisci aperiam sequi. Sed, illo! Veritatis modi tenetur expedita animi nam aspernatur facilis itaque suscipit!
+		</p>
 	</div>
 	<div class="col-md-3">
-		<div class="card">
-			<div class="card-header">
-				Menu Utama
-			</div>
-			<ul class="list-group">
-				<a href="?page=home" class="list-group-item">ARTIKEL/BERITA</a>
-				<a href="?page=home" class="list-group-item">LOWONGAN PEKERJAAN</a>
-			</ul>
-		</div>
+		<?php include "views/partials/rightbar.php"; ?>
 	</div>
 </div>

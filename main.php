@@ -37,6 +37,10 @@
 					include "views/auth/daftar.php";
 				} elseif ($page == 'aktivasi') {
 					include "views/auth/aktivasi.php";
+				} elseif ($page == 'info') {
+					include "views/info.php";
+				} elseif ($page == 'loker') {
+					include "views/loker.php";
 				}
 
 			}

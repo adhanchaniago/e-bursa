@@ -84,4 +84,12 @@
 		return $data['id'];
 	}
 
+	function perusahaanGetNama($user_id) {
+		$conn = koneksi();
+		$sql = "SELECT nama_perusahaan FROM profil_perusahaan WHERE id = '$user_id'";
+		$proc = mysqli_query($conn, $sql);
+		$data = mysqli_fetch_assoc($proc);
+		return $data['nama_perusahaan'];
+	}
+
 ?>

@@ -22,11 +22,11 @@ CREATE TABLE `aktivasi` (
   `token` varchar(30) NOT NULL,
   `status` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
 
 /*Data for the table `aktivasi` */
 
-insert  into `aktivasi`(`id`,`user_akun_id`,`token`,`status`) values (20,30,'d8f24be5044f434737a4d041c1ad6a',1);
+insert  into `aktivasi`(`id`,`user_akun_id`,`token`,`status`) values (20,30,'d8f24be5044f434737a4d041c1ad6a',1),(28,38,'d17b4677a30630d2fbd2dcc26f1d64',1);
 
 /*Table structure for table `hak_akses` */
 
@@ -72,7 +72,7 @@ DROP TABLE IF EXISTS `lowongan`;
 CREATE TABLE `lowongan` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `profil_perusahaan_id` int(11) NOT NULL,
-  `judul` varchar(50) NOT NULL,
+  `judul` varchar(255) NOT NULL,
   `tanggal_mulai` date NOT NULL,
   `tanggal_selesai` date NOT NULL,
   `deskripsi_pekerjaan` text NOT NULL,
@@ -82,9 +82,11 @@ CREATE TABLE `lowongan` (
   `dibuat_pada` date NOT NULL,
   PRIMARY KEY (`id`),
   KEY `profil_perusahaan_id` (`profil_perusahaan_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 /*Data for the table `lowongan` */
+
+insert  into `lowongan`(`id`,`profil_perusahaan_id`,`judul`,`tanggal_mulai`,`tanggal_selesai`,`deskripsi_pekerjaan`,`deskripsi_persyaratan`,`gaji`,`status`,`dibuat_pada`) values (1,2,'Lowongan Pekerjaan Web Developer (Progammer Junior, Senior, Expert)','2018-07-11','2018-07-15','Dibutuhkan untuk jadi cs','Tamat slta',1500000,1,'2018-07-11');
 
 /*Table structure for table `pendidikan_formal` */
 
@@ -145,9 +147,11 @@ CREATE TABLE `pengalaman_kerja` (
   `dibuat_pada` date NOT NULL,
   PRIMARY KEY (`id`),
   KEY `profil_pencaker_id` (`profil_pencaker_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 /*Data for the table `pengalaman_kerja` */
+
+insert  into `pengalaman_kerja`(`id`,`profil_pencaker_id`,`nama_perusahaan`,`jabatan`,`deskripsi_jabatan`,`bidang_perusahaan`,`tanggal_masuk`,`tanggal_keluar`,`dibuat_pada`) values (1,4,'PT. AMI','Web Dev','Membuat website','jasa','2018-07-02','2018-07-06','2018-07-08');
 
 /*Table structure for table `profil_admin` */
 
@@ -222,9 +226,11 @@ CREATE TABLE `profil_perusahaan` (
   `dibuat_pada` date NOT NULL,
   PRIMARY KEY (`id`),
   KEY `user_akun_id` (`user_akun_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 /*Data for the table `profil_perusahaan` */
+
+insert  into `profil_perusahaan`(`id`,`user_akun_id`,`nama_perusahaan`,`no_siup`,`no_situ`,`bidang_usaha`,`alamat`,`telepon`,`deskripsi_perusahaan`,`website`,`email`,`logo_perusahaan`,`slogan`,`dibuat_pada`) values (2,38,'PT. Andalas Medika Infotama','436/6828A/338.8.12/2','0739/22-09/PK/VIII/0','Jasa','Padang','444222','Membuat website','ami-tech.co.id','adiraka8@gmail.com','c6a0ccdf991102ee0e78.jpg','Membangun Negara','2018-07-08');
 
 /*Table structure for table `user_akun` */
 
@@ -241,11 +247,11 @@ CREATE TABLE `user_akun` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`),
   KEY `hak_akses_id` (`hak_akses_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=latin1;
 
 /*Data for the table `user_akun` */
 
-insert  into `user_akun`(`id`,`hak_akses_id`,`username`,`password`,`status`,`aktivasi`,`dibuat_pada`) values (1,1,'admin','21232f297a57a5a743894a0e4a801fc3',1,1,'2018-05-11'),(2,2,'scrypto','21232f297a57a5a743894a0e4a801fc3',1,1,'2018-05-25'),(30,2,'zeddevil','0858dcffabb19cf27bcae1865f8530c5',1,1,'2018-06-05');
+insert  into `user_akun`(`id`,`hak_akses_id`,`username`,`password`,`status`,`aktivasi`,`dibuat_pada`) values (1,1,'admin','21232f297a57a5a743894a0e4a801fc3',1,1,'2018-05-11'),(2,2,'scrypto','21232f297a57a5a743894a0e4a801fc3',1,1,'2018-05-25'),(30,2,'zeddevil','0858dcffabb19cf27bcae1865f8530c5',1,1,'2018-06-05'),(38,3,'ami1234','20fd35afc7ae7cb8cc5c7a31b1101f3e',1,1,'2018-07-08');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
