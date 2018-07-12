@@ -41,6 +41,10 @@
 					include "views/info.php";
 				} elseif ($page == 'loker') {
 					include "views/loker.php";
+				} elseif ($page == 'detail-loker') {
+					include "views/detail-loker.php";
+				} elseif ($page == 'detail-info') {
+					include "views/detail-info.php";
 				}
 
 			}

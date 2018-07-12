@@ -65,6 +65,20 @@ CREATE TABLE `info_berita` (
 
 insert  into `info_berita`(`id`,`profil_admin_id`,`judul`,`tanggal`,`kategori`,`konten`,`status`) values (1,1,'Lorem Ipsum Dolor Sit Amet','2018-05-28','Berita','<p>Tattatata</p>\r\n<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\">\r\n<tbody>\r\n<tr>\r\n<td style=\"width: 33.3333%;\">asdasd</td>\r\n<td style=\"width: 33.3333%;\">&nbsp;</td>\r\n<td style=\"width: 33.3333%;\">&nbsp;</td>\r\n</tr>\r\n<tr>\r\n<td style=\"width: 33.3333%;\">asd</td>\r\n<td style=\"width: 33.3333%;\">asd</td>\r\n<td style=\"width: 33.3333%;\">&nbsp;</td>\r\n</tr>\r\n<tr>\r\n<td style=\"width: 33.3333%;\">&nbsp;</td>\r\n<td style=\"width: 33.3333%;\">&nbsp;</td>\r\n<td style=\"width: 33.3333%;\">2</td>\r\n</tr>\r\n</tbody>\r\n</table>',1);
 
+/*Table structure for table `lamar` */
+
+DROP TABLE IF EXISTS `lamar`;
+
+CREATE TABLE `lamar` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `lowongan_id` int(11) NOT NULL,
+  `profil_pencaker_id` int(11) NOT NULL,
+  `tanggal_lamar` date NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `lamar` */
+
 /*Table structure for table `lowongan` */
 
 DROP TABLE IF EXISTS `lowongan`;
@@ -82,11 +96,11 @@ CREATE TABLE `lowongan` (
   `dibuat_pada` date NOT NULL,
   PRIMARY KEY (`id`),
   KEY `profil_perusahaan_id` (`profil_perusahaan_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 /*Data for the table `lowongan` */
 
-insert  into `lowongan`(`id`,`profil_perusahaan_id`,`judul`,`tanggal_mulai`,`tanggal_selesai`,`deskripsi_pekerjaan`,`deskripsi_persyaratan`,`gaji`,`status`,`dibuat_pada`) values (1,2,'Lowongan Pekerjaan Web Developer (Progammer Junior, Senior, Expert)','2018-07-11','2018-07-15','Dibutuhkan untuk jadi cs','Tamat slta',1500000,1,'2018-07-11');
+insert  into `lowongan`(`id`,`profil_perusahaan_id`,`judul`,`tanggal_mulai`,`tanggal_selesai`,`deskripsi_pekerjaan`,`deskripsi_persyaratan`,`gaji`,`status`,`dibuat_pada`) values (3,2,'Web Programmer','2018-07-11','2018-07-14','<p>Saat ini kami sedang membutuhkan staff Web Programmer yang sangat kompeten di bidangnya terutama di bidang API development maupun Website development.</p>\r\n<p><strong>Tanggung Jawab Pekerjaan :</strong></p>\r\n<p>&ndash; Membuat website atau system baru dengan PHP/HTML standard maupun dengan Content Management System dan database MySql.<br />&ndash; Mampu membuat serta mengintegrasikan API (XML/JSON) ke pihak ketiga. (contoh: Hotel Channel Manager dan Hotel Meta Search Engine)<br />&ndash; Maintenance system yang sudah ada (system OTA dan Activities)<br />&ndash; Membuat dan mengembangkan mobile application Android/IOS (Optional)</p>\r\n<p><strong>Tunjangan :</strong></p>\r\n<p>BPJS Kesehatan, BPJS Ketenagakerjaan</p>\r\n<p><strong>Waktu Bekerja :&nbsp;</strong><br />Senin &ndash; Jumat (09:00 &ndash; 17:00), Sabtu (09:00-15:00)</p>\r\n<p>Jenis Pekerjaan: Penuh Waktu</p>','<p><strong>Syarat Pengalaman :&nbsp;</strong><br />Minimal 2 Tahun dibidangnya ataupun Fresh Graduate dengan keahlian khusus.</p>\r\n<p><strong>Keahlian :</strong></p>\r\n<p>Mengusai XML/JSON, HTML, CSS, PHP, MySQL, JavaScript</p>\r\n<p><strong>Kualifikasi :</strong></p>\r\n<p>&ndash; Pria/Wanita usia maksimal 30 tahun<br />&ndash; Mau bekerja keras dan mau berbagi hal-hal baru dibidangnya<br />&ndash; Siap bekerja dalam team maupun sendiri<br />&ndash; Siap ditarget</p>',5000000,0,'2018-07-11');
 
 /*Table structure for table `pendidikan_formal` */
 
@@ -230,7 +244,7 @@ CREATE TABLE `profil_perusahaan` (
 
 /*Data for the table `profil_perusahaan` */
 
-insert  into `profil_perusahaan`(`id`,`user_akun_id`,`nama_perusahaan`,`no_siup`,`no_situ`,`bidang_usaha`,`alamat`,`telepon`,`deskripsi_perusahaan`,`website`,`email`,`logo_perusahaan`,`slogan`,`dibuat_pada`) values (2,38,'PT. Andalas Medika Infotama','436/6828A/338.8.12/2','0739/22-09/PK/VIII/0','Jasa','Padang','444222','Membuat website','ami-tech.co.id','adiraka8@gmail.com','c6a0ccdf991102ee0e78.jpg','Membangun Negara','2018-07-08');
+insert  into `profil_perusahaan`(`id`,`user_akun_id`,`nama_perusahaan`,`no_siup`,`no_situ`,`bidang_usaha`,`alamat`,`telepon`,`deskripsi_perusahaan`,`website`,`email`,`logo_perusahaan`,`slogan`,`dibuat_pada`) values (2,38,'PT. Andalas Medika Infotama','436/6828A/338.8.12/2','0739/22-09/PK/VIII/0','Jasa','Komplek Cendana Mata Air Thp. VIII Blok A No. 4 Padang','444222','Membuat website','ami-tech.co.id','adiraka8@gmail.com','c6a0ccdf991102ee0e78.jpg','Membangun Negara','2018-07-08');
 
 /*Table structure for table `user_akun` */
 

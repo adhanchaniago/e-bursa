@@ -14,7 +14,7 @@
 	<div class="col-md-9">
 		<h3 class="home-title">Loker Terbaru</h3>
 		<?php  
-
+			$list_data = array();
 			$query = "SELECT * FROM lowongan ";
 			$process = mysqli_query($conn, $query);
 			while($row = mysqli_fetch_array($process)) {
@@ -27,8 +27,13 @@
 				<div class="card">
 					<div class="card-body">
 						<p class="post-title">
-							<a href="#" class=""><?php echo $value['judul'] ?></a>
+							<a href="?page=detail-loker&id=<?php echo $value['id'] ?>" target="_blank"><?php echo $value['judul'] ?></a>
 							<span class="badge badge-success">Deadline <?php echo date("d M Y", strtotime($value['tanggal_selesai'])) ?></span>
+							<?php  
+								if ($value['status'] == 0) {
+									echo '<span class="badge badge-danger">Closed</span>';
+								}
+							?>
 						</p><hr>
 						<p class="post-time text-right">Dipublish oleh <a href="#"><?php echo perusahaanGetNama($value['profil_perusahaan_id']) ?></a> pada <?php echo date("d M Y", strtotime($value['dibuat_pada'])) ?></p>
 					</div>

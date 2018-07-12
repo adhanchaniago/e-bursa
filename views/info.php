@@ -26,9 +26,11 @@
 			<div class="col-md-12">
 				<div class="card">
 					<div class="card-body">
-						<p class="post-title"><a href="#" class=""><?php echo $value['judul'] ?></a></p><hr>
-						<div><?php echo $value['konten'] ?></div><hr>
-						<p class="post-time text-right">Kategori : <?php echo $value['kategori'] ?> | Dipublish pada : <?php echo $value['tanggal'] ?></p>
+						<p class="post-title">
+							<a href="?page=detail-info&id=<?php echo $value['id'] ?>" class=""><?php echo $value['judul'] ?></a>
+							<span class="badge badge-success">Kategori <?php echo $value['kategori'] ?></s
+						</p><hr>
+						<p class="post-time text-right">Dipublish oleh <a href="#">Admin</a> pada <?php echo date("d M Y", strtotime($value['tanggal'])) ?></p>
 					</div>
 				</div>
 			</div>

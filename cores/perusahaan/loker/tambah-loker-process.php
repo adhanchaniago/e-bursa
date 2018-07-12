@@ -37,8 +37,8 @@
 	// set variables
 	$id = sanitizeThis(perusahaanProfID($_POST['user_id']));
 	$title = sanitizeThis($_POST['title']);
-	$deskripsi = sanitizeThis($_POST['deskripsi']);
-	$syarat = sanitizeThis($_POST['syarat']);
+	$deskripsi = $_POST['deskripsi'];
+	$syarat = $_POST['syarat'];
 	$gaji = sanitizeThis($_POST['gaji']);
 	$mulai = sanitizeThis($_POST['mulai']);
 	$selesai = sanitizeThis($_POST['selesai']);

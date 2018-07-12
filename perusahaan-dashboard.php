@@ -50,6 +50,8 @@
 					include "views/perusahaan/loker.php";
 				} elseif ($page == 'tambah-loker') {
 					include "views/perusahaan/tambah-loker.php";
+				} elseif ($page == 'finis-loker') {
+					include "views/perusahaan/loker/finis-loker.php";
 				}
 
 			}

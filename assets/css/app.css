@@ -96,3 +96,10 @@
 .active {
 	z-index: 0;
 }
+
+.loker-sub-head {
+	font-weight: 700;
+	font-size: 16pt;
+	padding-bottom: 20px;
+	color: #004682;
+}

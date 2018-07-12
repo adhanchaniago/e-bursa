@@ -23,6 +23,7 @@
 							</thead>
 							<tbody>
 								<?php 
+									$list_data = array();
 									$id = perusahaanProfID($_SESSION['user_id']);
 									$query = "SELECT * FROM lowongan WHERE profil_perusahaan_id = '$id'";
 									$process = mysqli_query($conn, $query);
@@ -41,15 +42,17 @@
 											<?php 
 												if ($value['status']==1) {
 													echo '<span class="badge badge-success">ON GOING</span>';
+												} else {
+													echo '<span class="badge badge-danger">CLOSED</span>';
 												}
 											?>
 										</td>
 										<td>
 											<div class="btn-group" role="group">
-												<a href="#" class="btn btn-primary btn-sm">V</a>&nbsp;
+												<a href="main.php?page=detail-loker&id=<?php echo $value['id'] ?>" class="btn btn-primary btn-sm" target="_blank">V</a>&nbsp;
+												<a href="#" class="btn btn-primary btn-sm">P</a>&nbsp;
 												<a href="#" class="btn btn-success btn-sm">E</a>&nbsp;
-												<a href="#" class="btn btn-danger btn-sm">D</a>&nbsp;
-												<a href="#" class="btn btn-warning btn-sm">F</a>
+												<a href="?page=finis-loker&id=<?php echo $value['id'] ?>" class="btn btn-danger btn-sm <?php echo $value['status']=='0'?'disabled':'' ?>">F</a>
 											</div>
 										</td>
 									</tr>
