@@ -29,6 +29,14 @@
 		return $data;
 	}
 
+	function getPencakerProfil2($pencaker_id) {
+		$conn = koneksi();
+		$sql = "SELECT * FROM profil_pencaker WHERE id = '$pencaker_id'";
+		$proc = mysqli_query($conn, $sql);
+		$data = mysqli_fetch_assoc($proc);
+		return $data;
+	}
+
 	function getPerusahaanProfil($id) {
 		$conn = koneksi();
 		$sql = "SELECT * FROM profil_perusahaan WHERE user_akun_id = '$id'";
@@ -125,6 +133,21 @@
 			'foto' => $destinasi.$dat2['foto']
 		];
 
+		return $output;
+	}
+
+	function cekLamarKerja($lowongan_id, $pencaker_id) {
+		$conn = koneksi();
+		$sql = "SELECT * FROM lamar WHERE lowongan_id = '$lowongan_id' AND profil_pencaker_id = '$pencaker_id'";
+		$proc = mysqli_query($conn, $sql);
+		$data = mysqli_fetch_assoc($proc);
+		
+		if ($data != NULL) {
+			$output = 1;
+		} else {
+			$output = 0;
+		}
+		
 		return $output;
 	}
 

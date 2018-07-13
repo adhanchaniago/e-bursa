@@ -89,10 +89,13 @@ CREATE TABLE `lamar` (
   `lowongan_id` int(11) NOT NULL,
   `profil_pencaker_id` int(11) NOT NULL,
   `tanggal_lamar` date NOT NULL,
+  `status` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 /*Data for the table `lamar` */
+
+insert  into `lamar`(`id`,`lowongan_id`,`profil_pencaker_id`,`tanggal_lamar`,`status`) values (2,3,4,'2018-07-14',0);
 
 /*Table structure for table `lowongan` */
 
@@ -115,7 +118,7 @@ CREATE TABLE `lowongan` (
 
 /*Data for the table `lowongan` */
 
-insert  into `lowongan`(`id`,`profil_perusahaan_id`,`judul`,`tanggal_mulai`,`tanggal_selesai`,`deskripsi_pekerjaan`,`deskripsi_persyaratan`,`gaji`,`status`,`dibuat_pada`) values (3,2,'Web Programmer','2018-07-11','2018-07-14','<p>Saat ini kami sedang membutuhkan staff Web Programmer yang sangat kompeten di bidangnya terutama di bidang API development maupun Website development.</p>\r\n<p><strong>Tanggung Jawab Pekerjaan :</strong></p>\r\n<p>&ndash; Membuat website atau system baru dengan PHP/HTML standard maupun dengan Content Management System dan database MySql.<br />&ndash; Mampu membuat serta mengintegrasikan API (XML/JSON) ke pihak ketiga. (contoh: Hotel Channel Manager dan Hotel Meta Search Engine)<br />&ndash; Maintenance system yang sudah ada (system OTA dan Activities)<br />&ndash; Membuat dan mengembangkan mobile application Android/IOS (Optional)</p>\r\n<p><strong>Tunjangan :</strong></p>\r\n<p>BPJS Kesehatan, BPJS Ketenagakerjaan</p>\r\n<p><strong>Waktu Bekerja :&nbsp;</strong><br />Senin &ndash; Jumat (09:00 &ndash; 17:00), Sabtu (09:00-15:00)</p>\r\n<p>Jenis Pekerjaan: Penuh Waktu</p>','<p><strong>Syarat Pengalaman :&nbsp;</strong><br />Minimal 2 Tahun dibidangnya ataupun Fresh Graduate dengan keahlian khusus.</p>\r\n<p><strong>Keahlian :</strong></p>\r\n<p>Mengusai XML/JSON, HTML, CSS, PHP, MySQL, JavaScript</p>\r\n<p><strong>Kualifikasi :</strong></p>\r\n<p>&ndash; Pria/Wanita usia maksimal 30 tahun<br />&ndash; Mau bekerja keras dan mau berbagi hal-hal baru dibidangnya<br />&ndash; Siap bekerja dalam team maupun sendiri<br />&ndash; Siap ditarget</p>',5000000,0,'2018-07-11');
+insert  into `lowongan`(`id`,`profil_perusahaan_id`,`judul`,`tanggal_mulai`,`tanggal_selesai`,`deskripsi_pekerjaan`,`deskripsi_persyaratan`,`gaji`,`status`,`dibuat_pada`) values (3,2,'Web Programmer','2018-07-11','2018-07-14','<p>Saat ini kami sedang membutuhkan staff Web Programmer yang sangat kompeten di bidangnya terutama di bidang API development maupun Website development.</p>\r\n<p><strong>Tanggung Jawab Pekerjaan :</strong></p>\r\n<p>&ndash; Membuat website atau system baru dengan PHP/HTML standard maupun dengan Content Management System dan database MySql.<br />&ndash; Mampu membuat serta mengintegrasikan API (XML/JSON) ke pihak ketiga. (contoh: Hotel Channel Manager dan Hotel Meta Search Engine)<br />&ndash; Maintenance system yang sudah ada (system OTA dan Activities)<br />&ndash; Membuat dan mengembangkan mobile application Android/IOS (Optional)</p>\r\n<p><strong>Tunjangan :</strong></p>\r\n<p>BPJS Kesehatan, BPJS Ketenagakerjaan</p>\r\n<p><strong>Waktu Bekerja :&nbsp;</strong><br />Senin &ndash; Jumat (09:00 &ndash; 17:00), Sabtu (09:00-15:00)</p>\r\n<p>Jenis Pekerjaan: Penuh Waktu</p>','<p><strong>Syarat Pengalaman :&nbsp;</strong><br />Minimal 2 Tahun dibidangnya ataupun Fresh Graduate dengan keahlian khusus.</p>\r\n<p><strong>Keahlian :</strong></p>\r\n<p>Mengusai XML/JSON, HTML, CSS, PHP, MySQL, JavaScript</p>\r\n<p><strong>Kualifikasi :</strong></p>\r\n<p>&ndash; Pria/Wanita usia maksimal 30 tahun<br />&ndash; Mau bekerja keras dan mau berbagi hal-hal baru dibidangnya<br />&ndash; Siap bekerja dalam team maupun sendiri<br />&ndash; Siap ditarget</p>',5000000,1,'2018-07-11');
 
 /*Table structure for table `lowongan_komentar` */
 
@@ -197,7 +200,7 @@ CREATE TABLE `pengalaman_kerja` (
 
 /*Data for the table `pengalaman_kerja` */
 
-insert  into `pengalaman_kerja`(`id`,`profil_pencaker_id`,`nama_perusahaan`,`jabatan`,`deskripsi_jabatan`,`bidang_perusahaan`,`tanggal_masuk`,`tanggal_keluar`,`dibuat_pada`) values (1,4,'PT. AMI','Web Dev','Membuat website','jasa','2018-07-02','2018-07-06','2018-07-08');
+insert  into `pengalaman_kerja`(`id`,`profil_pencaker_id`,`nama_perusahaan`,`jabatan`,`deskripsi_jabatan`,`bidang_perusahaan`,`tanggal_masuk`,`tanggal_keluar`,`dibuat_pada`) values (1,4,'PT. AMI','Web Dev','Membuat website','Jasa Pengembangan Software','2018-07-02','2018-07-06','2018-07-08');
 
 /*Table structure for table `profil_admin` */
 
@@ -249,7 +252,7 @@ CREATE TABLE `profil_pencaker` (
 
 /*Data for the table `profil_pencaker` */
 
-insert  into `profil_pencaker`(`id`,`user_akun_id`,`nik`,`nama`,`jenis_kelamin`,`tempat_lahir`,`tanggal_lahir`,`agama`,`alamat`,`telepon`,`quote`,`email`,`photo`,`dibuat_pada`) values (4,30,'1371112904940006','Adi Raka Siwi, S.Kom','Pria','Padang','1994-04-29','Islam','Padang','081268280648','Talk Less Do More','adiraka8@gmail.com','81d722468d359107ac2d.jpg','0000-00-00');
+insert  into `profil_pencaker`(`id`,`user_akun_id`,`nik`,`nama`,`jenis_kelamin`,`tempat_lahir`,`tanggal_lahir`,`agama`,`alamat`,`telepon`,`quote`,`email`,`photo`,`dibuat_pada`) values (4,30,'1371112904940006','Adi Raka Siwi, S.Kom','Pria','Padang','1994-04-29','Islam','Komplek Filano Mandiri BLOK A1 No.1 Padang','081268280648','Talk Less Do More','adiraka8@gmail.com','81d722468d359107ac2d.jpg','0000-00-00');
 
 /*Table structure for table `profil_perusahaan` */
 

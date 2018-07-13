@@ -108,13 +108,23 @@
 </div><hr>
 
 <?php 
+	$lamar_status = cekLamarKerja($data['id'], pencakerProfID($_SESSION['user_id']));
 	if (isset($_SESSION['hak_akses'])) {
 		if ($_SESSION['hak_akses'] == 'pencaker') {
 ?>
 	
 	<div class="row">
-		<div class="col-md-12 text-center">
-			<a href="" class="btn btn-primary btn-lg btn-block">LAMAR SEKARANG !</a>
+		<div class="col-md-8 text-center">
+			<?php  
+				if ($lamar_status == 1) {
+					echo '<a href="?page=lamar-kerja&id='.$data['id'].'" class="btn btn-primary btn-lg btn-block disabled">ANDA SUDAH MELAMAR PADA LOKER INI !</a>';
+				} elseif ($data['status'] == 0) {
+					echo '<a href="?page=lamar-kerja&id='.$data['id'].'" class="btn btn-primary btn-lg btn-block disabled">ANDA SUDAH MELAMAR PADA LOKER INI !</a>';
+				} else {
+					echo '<a href="?page=lamar-kerja&id='.$data['id'].'" class="btn btn-primary btn-lg btn-block">LAMAR SEKARANG !</a>';
+				}
+			?>
+			
 		</div>
 	</div><hr>
 <?php 

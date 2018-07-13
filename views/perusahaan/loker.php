@@ -9,7 +9,7 @@
 				<p>Berikut adalah data lowongan kerja dari perusahaan anda:</p> <hr>
 				<div class="row">
 					<div class="col-md-12">
-						<table class="table table-bordered" id="tabel-list-loker">
+						<table class="table table-bordered nowrap" id="tabel-list-loker">
 							<thead>
 								<tr>
 									<th>#</th>
@@ -50,7 +50,7 @@
 										<td>
 											<div class="btn-group" role="group">
 												<a href="main.php?page=detail-loker&id=<?php echo $value['id'] ?>" class="btn btn-primary btn-sm" target="_blank">V</a>&nbsp;
-												<a href="#" class="btn btn-primary btn-sm">P</a>&nbsp;
+												<a href="?page=lihat-pelamar&id=<?php echo $value['id'] ?>" class="btn btn-primary btn-sm" target="_blank">P</a>&nbsp;
 												<a href="#" class="btn btn-success btn-sm">E</a>&nbsp;
 												<a href="?page=finis-loker&id=<?php echo $value['id'] ?>" class="btn btn-danger btn-sm <?php echo $value['status']=='0'?'disabled':'' ?>">F</a>
 											</div>

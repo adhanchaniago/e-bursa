@@ -38,6 +38,13 @@ $(document).ready(function() {
 		}
 	});
 
+	$('.tabel-profil').dataTable({
+		responsive: true,
+		language: {
+			url: '//cdn.datatables.net/plug-ins/1.10.16/i18n/Indonesian.json'
+		}
+	});
+
 	$('#tabel-data-pendidikan-formal').dataTable({
 		responsive: true,
 		info: false,

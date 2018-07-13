@@ -21,7 +21,7 @@
 <head>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>Pencari Kerja</title>
+	<title>Perusahaan</title>
 	<link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/vendors/datatables/datatables.min.css">
 	<link rel="stylesheet" href="assets/vendors/air-datepicker/dist/css/datepicker.min.css">
@@ -52,6 +52,8 @@
 					include "views/perusahaan/tambah-loker.php";
 				} elseif ($page == 'finis-loker') {
 					include "views/perusahaan/loker/finis-loker.php";
+				} elseif ($page == 'lihat-pelamar') {
+					include "views/perusahaan/loker/lihat-pelamar.php";
 				}
 
 			}

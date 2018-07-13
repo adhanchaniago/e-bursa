@@ -13,6 +13,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Selamat Datang E-Bursa</title>
 	<link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/vendors/datatables/datatables.min.css">
+	<link rel="stylesheet" href="assets/vendors/air-datepicker/dist/css/datepicker.min.css">
 	<link rel="stylesheet" href="assets/css/app.css">
 </head>
 <body>
@@ -47,6 +49,10 @@
 					include "views/detail-info.php";
 				} elseif ($page == 'tambah-komentar-loker') {
 					include "views/tambah-komentar-loker.php";
+				} elseif ($page == 'lamar-kerja') {
+					include "views/lamar-kerja.php";
+				} elseif ($page == 'profil-pencaker') {
+					include "views/profil-pencaker.php";
 				}
 
 			}
