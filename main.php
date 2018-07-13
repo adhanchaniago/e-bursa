@@ -45,6 +45,8 @@
 					include "views/detail-loker.php";
 				} elseif ($page == 'detail-info') {
 					include "views/detail-info.php";
+				} elseif ($page == 'tambah-komentar-loker') {
+					include "views/tambah-komentar-loker.php";
 				}
 
 			}
@@ -61,5 +63,11 @@
 
 	<script src="assets/vendors/jquery/js/jquery.min.js"></script>
 	<script src="assets/vendors/bootstrap/js/bootstrap.min.js"></script>
+	<script src="assets/vendors/datatables/datatables.min.js"></script>
+	<script src="assets/vendors/air-datepicker/dist/js/datepicker.min.js"></script>
+	<script src="assets/vendors/air-datepicker/dist/js/i18n/datepicker.en.js"></script>
+	<script src="assets/vendors/tinymce/jquery.tinymce.min.js"></script>
+	<script src="assets/vendors/tinymce/tinymce.min.js"></script>
+	<script src="assets/js/app.js"></script>
 </body>
 </html>

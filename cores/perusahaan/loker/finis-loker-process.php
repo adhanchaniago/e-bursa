@@ -1,5 +1,6 @@
 <?php  
 
+	// set variable
 	$id = sanitizeThis($_GET['id']);
 
 	// set query

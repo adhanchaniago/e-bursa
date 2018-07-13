@@ -106,22 +106,74 @@
 		</div>
 	</div>
 </div><hr>
-<div class="row">
-	<div class="col-md-12 text-center">
-		<?php  
-			var_dump(isset($_SESSION['hak_akses']));
-			if ($_SESSION['hak_akses'] == 'pencaker') {
-				echo '<a href="" class="btn btn-success btn-lg">LAMAR SEKARANG !</a>';
-			}
 
-		?>
+<?php 
+	if (isset($_SESSION['hak_akses'])) {
+		if ($_SESSION['hak_akses'] == 'pencaker') {
+?>
+	
+	<div class="row">
+		<div class="col-md-12 text-center">
+			<a href="" class="btn btn-primary btn-lg btn-block">LAMAR SEKARANG !</a>
+		</div>
+	</div><hr>
+<?php 
+		}
+?>
+	<div class="row">
+		<div class="col-md-8">
+			<form action="?page=tambah-komentar-loker" method="POST">
+				<input type="hidden" name="lowongan_id" value="<?php echo $data['id'] ?>">
+				<input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id'] ?>">
+				<div class="form-group">
+					<label for="komentar">TULIS KOMENTAR DISINI :</label>
+					<textarea name="komentar" id="komentar" rows="5" class="form-control"></textarea>
+				</div>
+				<div class="form-group text-right">
+					<button type="submit" class="btn btn-success">TAMBAH KOMENTAR</button>
+				</div>
+			</form> <hr>
+		</div>
 	</div>
-</div><hr>
+
+<?php			
+	}
+?>
+	
 <div class="row">
-	<div class="col-md-12">
-		<p>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum blanditiis rem voluptas minus cumque cupiditate alias earum vel iste odit excepturi eligendi delectus ratione, accusamus debitis est aliquid non molestias.
-		</p>
+	<div class="col-md-8">
+		<?php  
+
+			$list_data = [];
+			$query3 = "SELECT * FROM lowongan_komentar WHERE lowongan_id = '".$data['id']."'";
+			$process3 = mysqli_query($conn, $query3);
+			while($row = mysqli_fetch_array($process3)) {
+				$list_data[] = $row;
+			}
+			
+		?>
+		<div class="loker-sub-head"><?php echo count($list_data) ?> KOMENTAR :</div>
+		<ul class="list-unstyled">
+
+			<?php
+				foreach ($list_data as $value) {
+					$list_detail_profil = getKomentarDetailUser($value['user_akun_id']);
+			?>
+				
+				<li class="media my-4">
+					<img class="mr-3 rounded-circle" src="<?php echo $list_detail_profil['foto'] ?>" width="64" height="64" alt="Generic placeholder image">
+					<div class="media-body">
+						<h5 class="mt-0 mb-1"><?php echo $list_detail_profil['nama'] ?></h5>
+						<span class="badge badge-primary"><?php echo strtoupper($list_detail_profil['hak_akses']) ?></span> <span class="badge badge-success"><?php echo date('d M Y', strtotime($value['tanggal'])) ?></span>
+						<div><?php echo $value['konten'] ?></div>
+					</div>
+				</li><hr>
+
+			<?php
+				}
+
+			?>
+			
+		</ul>
 	</div>
 </div>
-

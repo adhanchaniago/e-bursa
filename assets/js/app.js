@@ -89,4 +89,16 @@ $(document).ready(function() {
 		toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
 	});
 
+	tinymce.init({
+		selector: '.komen-area',
+		height: 250,
+		theme: 'modern',
+		plugins: [
+		"advlist autolink lists link image charmap print preview anchor",
+		"searchreplace visualblocks code fullscreen",
+		"insertdatetime media table contextmenu paste imagetools wordcount"
+		],
+		toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+	});
+
 });

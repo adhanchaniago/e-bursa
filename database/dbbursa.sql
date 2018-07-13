@@ -65,6 +65,21 @@ CREATE TABLE `info_berita` (
 
 insert  into `info_berita`(`id`,`profil_admin_id`,`judul`,`tanggal`,`kategori`,`konten`,`status`) values (1,1,'Lorem Ipsum Dolor Sit Amet','2018-05-28','Berita','<p>Tattatata</p>\r\n<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\">\r\n<tbody>\r\n<tr>\r\n<td style=\"width: 33.3333%;\">asdasd</td>\r\n<td style=\"width: 33.3333%;\">&nbsp;</td>\r\n<td style=\"width: 33.3333%;\">&nbsp;</td>\r\n</tr>\r\n<tr>\r\n<td style=\"width: 33.3333%;\">asd</td>\r\n<td style=\"width: 33.3333%;\">asd</td>\r\n<td style=\"width: 33.3333%;\">&nbsp;</td>\r\n</tr>\r\n<tr>\r\n<td style=\"width: 33.3333%;\">&nbsp;</td>\r\n<td style=\"width: 33.3333%;\">&nbsp;</td>\r\n<td style=\"width: 33.3333%;\">2</td>\r\n</tr>\r\n</tbody>\r\n</table>',1);
 
+/*Table structure for table `info_komentar` */
+
+DROP TABLE IF EXISTS `info_komentar`;
+
+CREATE TABLE `info_komentar` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `info_id` int(11) NOT NULL,
+  `user_akun_id` int(11) NOT NULL,
+  `konten` text NOT NULL,
+  `tanggal` date NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `info_komentar` */
+
 /*Table structure for table `lamar` */
 
 DROP TABLE IF EXISTS `lamar`;
@@ -101,6 +116,23 @@ CREATE TABLE `lowongan` (
 /*Data for the table `lowongan` */
 
 insert  into `lowongan`(`id`,`profil_perusahaan_id`,`judul`,`tanggal_mulai`,`tanggal_selesai`,`deskripsi_pekerjaan`,`deskripsi_persyaratan`,`gaji`,`status`,`dibuat_pada`) values (3,2,'Web Programmer','2018-07-11','2018-07-14','<p>Saat ini kami sedang membutuhkan staff Web Programmer yang sangat kompeten di bidangnya terutama di bidang API development maupun Website development.</p>\r\n<p><strong>Tanggung Jawab Pekerjaan :</strong></p>\r\n<p>&ndash; Membuat website atau system baru dengan PHP/HTML standard maupun dengan Content Management System dan database MySql.<br />&ndash; Mampu membuat serta mengintegrasikan API (XML/JSON) ke pihak ketiga. (contoh: Hotel Channel Manager dan Hotel Meta Search Engine)<br />&ndash; Maintenance system yang sudah ada (system OTA dan Activities)<br />&ndash; Membuat dan mengembangkan mobile application Android/IOS (Optional)</p>\r\n<p><strong>Tunjangan :</strong></p>\r\n<p>BPJS Kesehatan, BPJS Ketenagakerjaan</p>\r\n<p><strong>Waktu Bekerja :&nbsp;</strong><br />Senin &ndash; Jumat (09:00 &ndash; 17:00), Sabtu (09:00-15:00)</p>\r\n<p>Jenis Pekerjaan: Penuh Waktu</p>','<p><strong>Syarat Pengalaman :&nbsp;</strong><br />Minimal 2 Tahun dibidangnya ataupun Fresh Graduate dengan keahlian khusus.</p>\r\n<p><strong>Keahlian :</strong></p>\r\n<p>Mengusai XML/JSON, HTML, CSS, PHP, MySQL, JavaScript</p>\r\n<p><strong>Kualifikasi :</strong></p>\r\n<p>&ndash; Pria/Wanita usia maksimal 30 tahun<br />&ndash; Mau bekerja keras dan mau berbagi hal-hal baru dibidangnya<br />&ndash; Siap bekerja dalam team maupun sendiri<br />&ndash; Siap ditarget</p>',5000000,0,'2018-07-11');
+
+/*Table structure for table `lowongan_komentar` */
+
+DROP TABLE IF EXISTS `lowongan_komentar`;
+
+CREATE TABLE `lowongan_komentar` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `lowongan_id` int(11) NOT NULL,
+  `user_akun_id` int(11) NOT NULL,
+  `konten` text NOT NULL,
+  `tanggal` date NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+/*Data for the table `lowongan_komentar` */
+
+insert  into `lowongan_komentar`(`id`,`lowongan_id`,`user_akun_id`,`konten`,`tanggal`) values (1,3,30,'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','2018-07-13'),(3,3,38,'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut quisquam fugiat rem magni nemo, obcaecati maiores suscipit doloremque, aliquam consequuntur qui neque animi dolores ipsum dolorum ea velit? Ullam, nihil.','2018-07-13'),(4,3,30,'Lorem ipsum dolor sit amet, consectetur adipisicing elit,','2018-07-13');
 
 /*Table structure for table `pendidikan_formal` */
 
