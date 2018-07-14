@@ -164,7 +164,7 @@
 										</thead>
 										<tbody>
 											<?php  
-
+												$list_data = [];
 												$id = pencakerProfID($_SESSION['user_id']);
 												$query = "SELECT * FROM pendidikan_formal WHERE profil_pencaker_id = '$id'";
 												$process = mysqli_query($conn, $query);
@@ -241,7 +241,7 @@
 										</thead>
 										<tbody>
 											<?php  
-
+												$list_data2 = [];
 												$query2 = "SELECT * FROM pendidikan_nonformal WHERE profil_pencaker_id = '$id'";
 												$process2 = mysqli_query($conn, $query2);
 												while($row2 = mysqli_fetch_array($process2)) {
@@ -338,7 +338,7 @@
 										</thead>
 										<tbody>
 											<?php  
-
+												$list_data3 = [];
 												$query3 = "SELECT * FROM pengalaman_kerja  WHERE profil_pencaker_id = '$id'";
 												$process3 = mysqli_query($conn, $query3);
 												while($row3 = mysqli_fetch_array($process3)) {
