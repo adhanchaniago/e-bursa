@@ -57,6 +57,10 @@
 					include "views/admin/event-berita/list-event.php";
 				} elseif ($page == 'publish') {
 					include "views/admin/event-berita/publish.php";
+				} elseif ($page == 'loker') {
+					include "views/admin/loker.php";
+				} elseif ($page == 'banned-loker') {
+					include "views/admin/loker/banned.php";
 				}
 
 			}

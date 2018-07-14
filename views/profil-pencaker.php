@@ -75,6 +75,7 @@
 					</thead>
 					<tbody>
 						<?php  
+							$list1 = [];
 							$q1 = "SELECT * FROM pendidikan_formal WHERE profil_pencaker_id = '$profil_id'";
 							$p1 = mysqli_query($conn, $q1);
 							while($r1 = mysqli_fetch_array($p1)) {
@@ -112,7 +113,8 @@
 						</tr>
 					</thead>
 					<tbody>
-						<?php  
+						<?php
+							$list2 = [];
 							$q2 = "SELECT * FROM pendidikan_nonformal WHERE profil_pencaker_id = '$profil_id'";
 							$p2 = mysqli_query($conn, $q2);
 							while($r2 = mysqli_fetch_array($p2)) {
@@ -152,6 +154,7 @@
 					</thead>
 					<tbody>
 						<?php  
+							$list3 = [];
 							$q3 = "SELECT * FROM pengalaman_kerja WHERE profil_pencaker_id = '$profil_id'";
 							$p3 = mysqli_query($conn, $q3);
 							while($r3 = mysqli_fetch_array($p3)) {

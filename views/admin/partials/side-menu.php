@@ -11,9 +11,10 @@
 	</div>
 	<ul class="list-group">
 		<a href="?page=home" class="list-group-item <?php echo $page=='home'?'active':'' ?>">HOME</a>
+		<a href="?page=profil" class="list-group-item <?php echo $page=='profil'?'active':'' ?>">PROFIL</a>
 		<a href="?page=akun" class="list-group-item <?php echo $page=='akun'?'active':'' ?>">USER AKUN</a>
 		<a href="?page=event" class="list-group-item <?php echo $page=='event'?'active':'' ?>">BERITA/EVENT</a>
-		<a href="?page=loker" class="list-group-item <?php echo $page=='loker'?'active':'' ?>">LOKER</a>
+		<a href="?page=loker" class="list-group-item <?php echo $page=='loker'?'active':'' ?>">LIST LOKER</a>
 		<a href="logout.php" class="list-group-item">LOGOUT</a>
 	</ul>
 </div>

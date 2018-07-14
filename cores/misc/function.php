@@ -45,6 +45,14 @@
 		return $data;
 	}
 
+	function getPerusahaanProfil2($perusahaan_id) {
+		$conn = koneksi();
+		$sql = "SELECT * FROM profil_perusahaan WHERE id = '$perusahaan_id'";
+		$proc = mysqli_query($conn, $sql);
+		$data = mysqli_fetch_assoc($proc);
+		return $data;
+	}
+
 	function sanitizeThis($string) {
 		$conn = koneksi();
 		$output1 = mysqli_real_escape_string($conn, $string);
@@ -112,13 +120,13 @@
 
 		if ($hak == '1') {
 			$destinasi = 'assets/img/profil/admin/';
-			$sql2 = "SELECT nama, foto FROM profil_admin WHERE user_akun_id = '$user_id'";
+			$sql2 = "SELECT id, nama, foto FROM profil_admin WHERE user_akun_id = '$user_id'";
 		} elseif ($hak == '2') {
 			$destinasi = 'assets/img/profil/pencaker/';
-			$sql2 = "SELECT nama, photo AS foto FROM profil_pencaker WHERE user_akun_id = '$user_id'";
+			$sql2 = "SELECT id, nama, photo AS foto FROM profil_pencaker WHERE user_akun_id = '$user_id'";
 		} elseif ($hak == '3') {
 			$destinasi = 'assets/img/profil/perusahaan/';
-			$sql2 = "SELECT nama_perusahaan AS nama, logo_perusahaan AS foto FROM profil_perusahaan WHERE user_akun_id = '$user_id'";
+			$sql2 = "SELECT id, nama_perusahaan AS nama, logo_perusahaan AS foto FROM profil_perusahaan WHERE user_akun_id = '$user_id'";
 		} else {
 			$sql2 = "";
 		}
@@ -128,6 +136,7 @@
 
 		$output = [
 			'id' => $user_id,
+			'user_id' => $dat2['id'],
 			'hak_akses' => $slug,
 			'nama' => $dat2['nama'],
 			'foto' => $destinasi.$dat2['foto']

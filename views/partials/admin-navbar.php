@@ -10,20 +10,8 @@
 				<li class="nav-item">
 					<a class="nav-link" href="?page=home">Home</a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="?page=akun">Akun</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="?page=event">Event</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">Loker</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="?page=profil">Profil</a>
-				</li>
 			</ul>
-				<a class="btn btn-sm btn-outline-danger my-2 my-sm-0" href="logout.php">LOGOUT</a>
+			<a class="btn btn-sm btn-outline-danger my-2 my-sm-0" href="logout.php">LOGOUT</a>
 		</div>
 	</div>
 </nav>

@@ -11,7 +11,7 @@
 <head>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>Selamat Datang E-Bursa</title>
+	<title>E-Bursa</title>
 	<link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/vendors/datatables/datatables.min.css">
 	<link rel="stylesheet" href="assets/vendors/air-datepicker/dist/css/datepicker.min.css">
@@ -53,6 +53,8 @@
 					include "views/lamar-kerja.php";
 				} elseif ($page == 'profil-pencaker') {
 					include "views/profil-pencaker.php";
+				} elseif ($page == 'profil-perusahaan') {
+					include "views/profil-perusahaan.php";
 				}
 
 			}

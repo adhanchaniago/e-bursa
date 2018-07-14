@@ -108,20 +108,22 @@
 </div><hr>
 
 <?php 
-	$lamar_status = cekLamarKerja($data['id'], pencakerProfID($_SESSION['user_id']));
 	if (isset($_SESSION['hak_akses'])) {
+		$lamar_status = cekLamarKerja($data['id'], pencakerProfID($_SESSION['user_id']));
 		if ($_SESSION['hak_akses'] == 'pencaker') {
 ?>
 	
 	<div class="row">
 		<div class="col-md-8 text-center">
-			<?php  
+			<?php
 				if ($lamar_status == 1) {
-					echo '<a href="?page=lamar-kerja&id='.$data['id'].'" class="btn btn-primary btn-lg btn-block disabled">ANDA SUDAH MELAMAR PADA LOKER INI !</a>';
+					echo '<a href="#" class="btn btn-primary btn-lg btn-block disabled">ANDA SUDAH MELAMAR PADA LOKER INI !</a>';
+				} elseif ($data['bann'] == 1) {
+					echo '<a href="#" class="btn btn-danger btn-lg btn-block disabled">LOWONGAN KERJA DI BANNED !</a>';
 				} elseif ($data['status'] == 0) {
-					echo '<a href="?page=lamar-kerja&id='.$data['id'].'" class="btn btn-primary btn-lg btn-block disabled">ANDA SUDAH MELAMAR PADA LOKER INI !</a>';
+					echo '<a href="#" class="btn btn-danger btn-lg btn-block disabled">LOWONGAN KERJA SUDAH DITUTUP !</a>';
 				} else {
-					echo '<a href="?page=lamar-kerja&id='.$data['id'].'" class="btn btn-primary btn-lg btn-block">LAMAR SEKARANG !</a>';
+					echo '<a href="?page=lamar-kerja&id='.$data['id'].'" class="btn btn-success btn-lg btn-block">LAMAR SEKARANG !</a>';
 				}
 			?>
 			
@@ -173,8 +175,16 @@
 				<li class="media my-4">
 					<img class="mr-3 rounded-circle" src="<?php echo $list_detail_profil['foto'] ?>" width="64" height="64" alt="Generic placeholder image">
 					<div class="media-body">
-						<h5 class="mt-0 mb-1"><?php echo $list_detail_profil['nama'] ?></h5>
-						<span class="badge badge-primary"><?php echo strtoupper($list_detail_profil['hak_akses']) ?></span> <span class="badge badge-success"><?php echo date('d M Y', strtotime($value['tanggal'])) ?></span>
+						<?php
+							if ($list_detail_profil['hak_akses'] == 'pencaker') {
+								echo '<h5 class="mt-0 mb-1"><a href="?page=profil-pencaker&id='.$list_detail_profil['user_id'].'">'.$list_detail_profil['nama'].'</a></h5>';
+							} elseif ($list_detail_profil['hak_akses'] == 'perusahaan') {
+								echo '<h5 class="mt-0 mb-1"><a href="?page=profil-perusahaan&id='.$list_detail_profil['user_id'].'">'.$list_detail_profil['nama'].'</a></h5>';
+							} else {
+								echo '<h5 class="mt-0 mb-1"><a href="#">'.$list_detail_profil['nama'].'</a></h5>';
+							}
+						?>
+						<span class="badge badge-<?php echo $list_detail_profil['hak_akses'] == 'admin'?'danger':'primary' ?>"><?php echo strtoupper($list_detail_profil['hak_akses']) ?></span> <span class="badge badge-success"><?php echo date('d M Y', strtotime($value['tanggal'])) ?></span>
 						<div><?php echo $value['konten'] ?></div>
 					</div>
 				</li><hr>

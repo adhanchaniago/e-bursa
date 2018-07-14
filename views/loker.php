@@ -12,7 +12,7 @@
 
 <div class="row">
 	<div class="col-md-9">
-		<h3 class="home-title">Loker Terbaru</h3>
+		<h3 class="home-title">Lowongan Kerja Terbaru</h3><hr>
 		<?php  
 			$list_data = array();
 			$query = "SELECT * FROM lowongan ";
@@ -27,11 +27,14 @@
 				<div class="card">
 					<div class="card-body">
 						<p class="post-title">
-							<a href="?page=detail-loker&id=<?php echo $value['id'] ?>" target="_blank"><?php echo $value['judul'] ?></a>
+							<a href="?page=detail-loker&id=<?php echo $value['id'] ?>"><?php echo $value['judul'] ?></a>
 							<span class="badge badge-success">Deadline <?php echo date("d M Y", strtotime($value['tanggal_selesai'])) ?></span>
 							<?php  
 								if ($value['status'] == 0) {
-									echo '<span class="badge badge-danger">Closed</span>';
+									echo '<span class="badge badge-danger">Closed</span> ';
+								}
+								if ($value['bann'] == 1) {
+									echo '<span class="badge badge-danger">Banned</span> ';
 								}
 							?>
 						</p><hr>
