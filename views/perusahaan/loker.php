@@ -49,10 +49,10 @@
 										</td>
 										<td>
 											<div class="btn-group" role="group">
-												<a href="main.php?page=detail-loker&id=<?php echo $value['id'] ?>" class="btn btn-primary btn-sm" target="_blank">V</a>&nbsp;
-												<a href="?page=lihat-pelamar&id=<?php echo $value['id'] ?>" class="btn btn-primary btn-sm" target="_blank">P</a>&nbsp;
-												<a href="#" class="btn btn-success btn-sm">E</a>&nbsp;
-												<a href="?page=finis-loker&id=<?php echo $value['id'] ?>" class="btn btn-danger btn-sm <?php echo $value['status']=='0'?'disabled':'' ?>">F</a>
+												<a href="main.php?page=detail-loker&id=<?php echo $value['id'] ?>" class="btn btn-primary btn-sm" target="_blank">DETAIL</a>
+												<a href="?page=lihat-pelamar&id=<?php echo $value['id'] ?>" class="btn btn-primary btn-sm" target="_blank">PELAMAR</a>
+												<a href="#" class="btn btn-success btn-sm">UBAH</a>
+												<a href="?page=finis-loker&id=<?php echo $value['id'] ?>" class="btn btn-danger btn-sm <?php echo $value['status']=='0'?'disabled':'' ?>">TUTUP</a>
 											</div>
 										</td>
 									</tr>

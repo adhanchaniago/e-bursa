@@ -24,9 +24,14 @@
 
 ?>
 
-<div class="row">
+<div class="row print-area">
 	<div class="col-md-8">
-		<h3 class="home-title"><?php echo $data['judul'] ?></h3>
+		<h3 class="home-title">
+			<?php echo $data['judul'] ?> 
+			<span class="float-right">
+				<button type="button" class="btn btn-sm btn-primary print-button" onclick="window.print()">PRINT</button>
+			</span>
+		</h3>
 		<div class="loker-sub-head">DESKRIPSI PEKERJAAN :</div>
 		<div><?php echo $data['deskripsi_pekerjaan'] ?></div>
 		<div class="loker-sub-head">DESKRIPSI PERSYARATAN :</div>

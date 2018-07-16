@@ -13,6 +13,7 @@
 	<ul class="list-group">
 		<a href="?page=home" class="list-group-item <?php echo $page=='home'?'active':'' ?>">HOME</a>
 		<a href="?page=profil" class="list-group-item <?php echo $page=='profil'?'active':'' ?>">PROFIL</a>
+		<a href="?page=lamaran" class="list-group-item <?php echo $page=='lamaran'?'active':'' ?>">LAMARAN</a>
 		<a href="main.php?page=loker" class="list-group-item">LIHAT LOKER</a>
 		<a href="logout.php" class="list-group-item">LOGOUT</a>
 	</ul>

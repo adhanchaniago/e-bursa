@@ -103,3 +103,25 @@
 	padding-bottom: 20px;
 	color: #004682;
 }
+
+@media print {
+
+	body * {
+		visibility: hidden;
+	}
+
+	.print-area, .print-area * {
+		visibility: visible;
+	}
+
+	.print-area {
+		position: absolute;
+		left: 0;
+		top: 50px;
+	}
+	
+	.print-button {
+		visibility: hidden;
+	}
+
+}

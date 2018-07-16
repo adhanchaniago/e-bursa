@@ -54,6 +54,8 @@
 					include "views/perusahaan/loker/finis-loker.php";
 				} elseif ($page == 'lihat-pelamar') {
 					include "views/perusahaan/loker/lihat-pelamar.php";
+				} elseif ($page == 'lamar-aksi') {
+					include "views/perusahaan/loker/lamar-aksi.php";
 				}
 
 			}

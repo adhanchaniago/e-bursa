@@ -46,6 +46,8 @@
 					include "views/pencaker/home.php";
 				} elseif ($page == 'profil') {
 					include "views/pencaker/profil.php";
+				} elseif ($page == 'lamaran') {
+					include "views/pencaker/lamaran.php";
 				}
 
 			}
