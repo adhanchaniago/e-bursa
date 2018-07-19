@@ -83,5 +83,15 @@
 	<script src="assets/vendors/tinymce/tinymce.min.js"></script>
 	<script src="assets/vendors/zabuto/zabuto_calendar.min.js"></script>
 	<script src="assets/js/app.js"></script>
+	<script>
+		$(function(){
+			$("#my-calendar").zabuto_calendar({
+		    	language: "en",
+		    	today: true,
+		    	show_previous: true,
+		     	show_next: true
+		    });
+		});
+	</script>
 </body>
 </html>
