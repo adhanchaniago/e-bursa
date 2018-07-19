@@ -15,6 +15,7 @@
 	<link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/vendors/datatables/datatables.min.css">
 	<link rel="stylesheet" href="assets/vendors/air-datepicker/dist/css/datepicker.min.css">
+	<link rel="stylesheet" href="assets/vendors/zabuto/zabuto_calendar.min.css">
 	<link rel="stylesheet" href="assets/css/app.css">
 </head>
 <body>
@@ -43,12 +44,16 @@
 					include "views/info.php";
 				} elseif ($page == 'loker') {
 					include "views/loker.php";
+				} elseif ($page == 'loker-adv') {
+					include "views/loker-adv.php";
 				} elseif ($page == 'detail-loker') {
 					include "views/detail-loker.php";
 				} elseif ($page == 'detail-info') {
 					include "views/detail-info.php";
 				} elseif ($page == 'tambah-komentar-loker') {
 					include "views/tambah-komentar-loker.php";
+				} elseif ($page == 'tambah-komentar-info') {
+					include "views/tambah-komentar-info.php";
 				} elseif ($page == 'lamar-kerja') {
 					include "views/lamar-kerja.php";
 				} elseif ($page == 'profil-pencaker') {
@@ -76,6 +81,7 @@
 	<script src="assets/vendors/air-datepicker/dist/js/i18n/datepicker.en.js"></script>
 	<script src="assets/vendors/tinymce/jquery.tinymce.min.js"></script>
 	<script src="assets/vendors/tinymce/tinymce.min.js"></script>
+	<script src="assets/vendors/zabuto/zabuto_calendar.min.js"></script>
 	<script src="assets/js/app.js"></script>
 </body>
 </html>

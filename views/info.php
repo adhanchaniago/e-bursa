@@ -15,7 +15,7 @@
 		<h3 class="home-title">Artikel Informasi Terbaru</h3><hr>
 		<?php  
 			$list_data = [];
-			$query = "SELECT * FROM info_berita WHERE status = '1'";
+			$query = "SELECT * FROM info_berita WHERE status = '1' ORDER BY tanggal DESC";
 			$process = mysqli_query($conn, $query);
 			while($row = mysqli_fetch_array($process)) {
 				$list_data[] = $row;
@@ -28,9 +28,9 @@
 					<div class="card-body">
 						<p class="post-title">
 							<a href="?page=detail-info&id=<?php echo $value['id'] ?>" class=""><?php echo $value['judul'] ?></a>
-							<span class="badge badge-success">Kategori <?php echo $value['kategori'] ?></s
+							
 						</p><hr>
-						<p class="post-time text-right">Dipublish oleh <a href="#">Admin</a> pada <?php echo date("d M Y", strtotime($value['tanggal'])) ?></p>
+						<p class="post-time text-right"><span class="badge badge-success float-left"><?php echo strtoupper($value['kategori']) ?></span>Dipublish oleh <a href="#">Admin</a> pada <?php echo date("d M Y", strtotime($value['tanggal'])) ?></p>
 					</div>
 				</div>
 			</div>

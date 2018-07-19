@@ -61,7 +61,7 @@
 		header('Location:../../main.php?page=daftar');
 		die();
 	}
-
+	
 	// cek format e-mail
 	if ($email_v['stat'] == '0') {
 		$_SESSION['gagal'] = 'Email yang dimasukkan tidak valid!';

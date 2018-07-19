@@ -23,6 +23,7 @@
 							</thead>
 							<tbody>
 								<?php  
+									$list_data = [];
 									$lowongan_id = sanitizeThis($_GET['id']);
 									$query = "SELECT * FROM lamar WHERE lowongan_id = '$lowongan_id'";
 									$proces = mysqli_query($conn, $query);

@@ -12,10 +12,46 @@
 
 <div class="row">
 	<div class="col-md-9">
-		<h3 class="home-title">Lowongan Kerja Terbaru</h3><hr>
+		<?php  
+			$key = sanitizeThis($_GET['key']);
+			if ($key == 'sma') {
+				$title = "SMA/SMK";
+				$query = "
+					SELECT * FROM lowongan WHERE deskripsi_persyaratan LIKE '%sma%' 
+					OR deskripsi_persyaratan LIKE '%smk%' 
+					OR deskripsi_persyaratan LIKE '%slta%'
+					ORDER BY dibuat_pada DESC
+				";
+			} elseif ($key == 'd3') {
+				$title = "DIPLOMA 3";
+				$query = "
+					SELECT * FROM lowongan WHERE deskripsi_persyaratan LIKE '%d3%' 
+					OR deskripsi_persyaratan LIKE '%diploma 3%' 
+					OR deskripsi_persyaratan LIKE '%d-3%' 
+					ORDER BY dibuat_pada DESC
+				";
+			} elseif ($key == 's1') {
+				$title = "STRATA 1";
+				$query = "
+					SELECT * FROM lowongan WHERE deskripsi_persyaratan LIKE '%s1%' 
+					OR deskripsi_persyaratan LIKE '%strata 1%' 
+					OR deskripsi_persyaratan LIKE '%s-1%' 
+					ORDER BY dibuat_pada DESC
+				";
+			} elseif ($key == 's2') {
+				$title = "STRATA 2";
+				$query = "
+					SELECT * FROM lowongan WHERE deskripsi_persyaratan LIKE '%s2%' 
+					OR deskripsi_persyaratan LIKE '%strata 2%' 
+					OR deskripsi_persyaratan LIKE '%s-2%' 
+					ORDER BY dibuat_pada DESC
+				";
+			}
+		?>
+		<h3 class="home-title">Lowongan Kerja Terbaru <?php echo $title; ?></h3><hr>
 		<?php  
 			$list_data = array();
-			$query = "SELECT * FROM lowongan ORDER BY dibuat_pada DESC";
+			// $query = "SELECT * FROM lowongan ORDER BY dibuat_pada DESC";
 			$process = mysqli_query($conn, $query);
 			while($row = mysqli_fetch_array($process)) {
 				$list_data[] = $row;

@@ -4,6 +4,13 @@ $(document).ready(function() {
         $.fn.dataTable.tables( {visible: true, api: true} ).columns.adjust();
     } );
 
+    $("#my-calendar").zabuto_calendar({
+    	language: "en",
+    	today: true,
+    	show_previous: true,
+     	show_next: true
+    });
+
 	$.fn.datepicker.language['en'] = {
 		days: ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'],
 		daysShort: ['Min', 'Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab'],
