@@ -1,26 +1,70 @@
 <div class="row">
 	<div class="col-md-3">
-		<?php include "views/admin/partials/side-menu.php"; ?>
+		<?php 
+			include "views/admin/partials/side-menu.php";
+			$data = getLokerCountReport();
+		?>
 	</div>
 	<div class="col-md-9">
-		<div class="card">
-			<div class="card-body">
-				<h3 class="home-title">Selamat Datang <?php echo $dataProfil["nama"] ?></h3>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi facere rerum perferendis pariatur consectetur perspiciatis numquam aspernatur, autem totam corporis dicta non culpa architecto, impedit ipsa, nihil maxime in doloremque!
-				</p>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure adipisci possimus iste voluptatum aspernatur! Alias ad nobis, corporis officiis. Molestiae tempore odio numquam consequatur ab fuga quo, dolore fugit eveniet!
-				</p>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet cumque non, perferendis rerum, fugit cupiditate sequi necessitatibus numquam ex at repudiandae nisi totam dolores debitis modi? Sequi, tenetur pariatur voluptatibus.
-				</p>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem non velit in eaque, nulla cumque itaque, necessitatibus unde officiis, nam eveniet soluta est neque, asperiores et molestias aspernatur dolores repellendus.
-				</p>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, culpa assumenda porro voluptas deleniti aliquam itaque debitis fugiat ipsam officia commodi non, optio autem deserunt corporis nihil illum. Veritatis, molestias.
-				</p>
+		<div class="row">
+			<div class="col-md-4">
+				<div class="card">
+					<div class="card-header text-center">
+						<strong>TOTAL KESELURUHAN</strong>
+					</div>
+					<div class="card-body text-center count-number">
+						<?php echo $data['total'] ?>
+					</div>
+					<div class="card-footer text-center">
+						<strong>LOWONGAN KERJA</strong>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card">
+					<div class="card-header text-center">
+						<strong>LOWONGAN KERJA</strong>
+					</div>
+					<div class="card-body text-center count-number">
+						<?php echo $data['ongoing'] ?>
+					</div>
+					<div class="card-footer text-center">
+						<strong>ON GOING</strong>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card">
+					<div class="card-header text-center">
+						<strong>LOWONGAN KERJA</strong>
+					</div>
+					<div class="card-body text-center count-number">
+						<?php echo $data['closed'] ?>
+					</div>
+					<div class="card-footer text-center">
+						<strong>CLOSED</strong>
+					</div>
+				</div>
+			</div>
+		</div><br>	
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-header"><strong>GRAFIK JUMLAH LOKER PADA TAHUN <?php echo date("Y") ?></strong></div>
+					<div class="card-body">
+						<canvas id="chart-loker" width="100%"></canvas>
+					</div>
+				</div>
+			</div>
+		</div><br>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-header"><strong>GRAFIK JUMLAH AKUN YANG TERDAFTAR PADA TAHUN <?php echo date("Y") ?></strong></div>
+					<div class="card-body">
+						<canvas id="chart-akun" width="100%"></canvas>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

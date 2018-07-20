@@ -61,6 +61,8 @@
 					include "views/admin/loker.php";
 				} elseif ($page == 'banned-loker') {
 					include "views/admin/loker/banned.php";
+				} elseif ($page == 'statik-loker') {
+					include "views/admin/loker/get-statik-loker.php";
 				}
 
 			}
@@ -82,6 +84,137 @@
 	<script src="assets/vendors/air-datepicker/dist/js/i18n/datepicker.en.js"></script>
 	<script src="assets/vendors/tinymce/jquery.tinymce.min.js"></script>
 	<script src="assets/vendors/tinymce/tinymce.min.js"></script>
+	<script src="assets/vendors/chart/dist/Chart.bundle.min.js"></script>
 	<script src="assets/js/app.js"></script>
+	<script>
+		$(function() {
+			$.ajax({
+				url: 'http://localhost/e-bursa/cores/admin/loker/get-statik-loker.php', 
+				method: 'GET',
+				dataType: 'json',
+				success: function(data) {
+					var ctx = document.getElementById("chart-loker").getContext('2d');
+					var myChart = new Chart(ctx, {
+						type: 'bar',
+						data: {
+							labels: data.bulan,
+							datasets: [{
+								label: 'Lowongan Kerja',
+								data: data.total,
+								backgroundColor: [
+									'rgba(54, 162, 235, 0.2)',
+									'rgba(54, 162, 235, 0.2)',
+									'rgba(54, 162, 235, 0.2)',
+									'rgba(54, 162, 235, 0.2)',
+									'rgba(54, 162, 235, 0.2)',
+									'rgba(54, 162, 235, 0.2)',
+									'rgba(54, 162, 235, 0.2)',
+									'rgba(54, 162, 235, 0.2)',
+									'rgba(54, 162, 235, 0.2)',
+									'rgba(54, 162, 235, 0.2)',
+									'rgba(54, 162, 235, 0.2)',
+									'rgba(54, 162, 235, 0.2)',
+								],
+								borderColor: [
+									'rgba(54, 162, 235, 1)',
+									'rgba(54, 162, 235, 1)',
+									'rgba(54, 162, 235, 1)',
+									'rgba(54, 162, 235, 1)',
+									'rgba(54, 162, 235, 1)',
+									'rgba(54, 162, 235, 1)',
+									'rgba(54, 162, 235, 1)',
+									'rgba(54, 162, 235, 1)',
+									'rgba(54, 162, 235, 1)',
+									'rgba(54, 162, 235, 1)',
+									'rgba(54, 162, 235, 1)',
+									'rgba(54, 162, 235, 1)',
+								],
+								borderWidth: 1
+							}]
+						}
+					});
+				}
+			});
+			$.ajax({
+				url: 'http://localhost/e-bursa/cores/admin/user-akun/get-statik-akun.php', 
+				method: 'GET',
+				dataType: 'json',
+				success: function(data) {
+					var ctx = document.getElementById("chart-akun").getContext('2d');
+					var myChart = new Chart(ctx, {
+						type: 'bar',
+						data: {
+							labels: data.bulan,
+							datasets: [{
+								label: 'Pencaker',
+								data: data.pencaker,
+								backgroundColor: [
+									'rgba(54, 162, 235, 0.2)',
+									'rgba(54, 162, 235, 0.2)',
+									'rgba(54, 162, 235, 0.2)',
+									'rgba(54, 162, 235, 0.2)',
+									'rgba(54, 162, 235, 0.2)',
+									'rgba(54, 162, 235, 0.2)',
+									'rgba(54, 162, 235, 0.2)',
+									'rgba(54, 162, 235, 0.2)',
+									'rgba(54, 162, 235, 0.2)',
+									'rgba(54, 162, 235, 0.2)',
+									'rgba(54, 162, 235, 0.2)',
+									'rgba(54, 162, 235, 0.2)',
+								],
+								borderColor: [
+									'rgba(54, 162, 235, 1)',
+									'rgba(54, 162, 235, 1)',
+									'rgba(54, 162, 235, 1)',
+									'rgba(54, 162, 235, 1)',
+									'rgba(54, 162, 235, 1)',
+									'rgba(54, 162, 235, 1)',
+									'rgba(54, 162, 235, 1)',
+									'rgba(54, 162, 235, 1)',
+									'rgba(54, 162, 235, 1)',
+									'rgba(54, 162, 235, 1)',
+									'rgba(54, 162, 235, 1)',
+									'rgba(54, 162, 235, 1)',
+								],
+								borderWidth: 1
+							},{
+								label: 'Perusahaan',
+								data: data.pencaker,
+								backgroundColor: [
+									'rgba(255, 99, 132, 0.2)',
+									'rgba(255, 99, 132, 0.2)',
+									'rgba(255, 99, 132, 0.2)',
+									'rgba(255, 99, 132, 0.2)',
+									'rgba(255, 99, 132, 0.2)',
+									'rgba(255, 99, 132, 0.2)',
+									'rgba(255, 99, 132, 0.2)',
+									'rgba(255, 99, 132, 0.2)',
+									'rgba(255, 99, 132, 0.2)',
+									'rgba(255, 99, 132, 0.2)',
+									'rgba(255, 99, 132, 0.2)',
+									'rgba(255, 99, 132, 0.2)',
+								],
+								borderColor: [
+									'rgba(255,99,132,1)',
+									'rgba(255,99,132,1)',
+									'rgba(255,99,132,1)',
+									'rgba(255,99,132,1)',
+									'rgba(255,99,132,1)',
+									'rgba(255,99,132,1)',
+									'rgba(255,99,132,1)',
+									'rgba(255,99,132,1)',
+									'rgba(255,99,132,1)',
+									'rgba(255,99,132,1)',
+									'rgba(255,99,132,1)',
+									'rgba(255,99,132,1)',
+								],
+								borderWidth: 1
+							}]
+						}
+					});
+				}
+			});
+		});
+	</script>
 </body>
 </html>

@@ -91,7 +91,6 @@
 		    	show_previous: true,
 		     	show_next: true
 		    });
-		});
 	</script>
 </body>
 </html>

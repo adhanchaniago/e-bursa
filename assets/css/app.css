@@ -104,6 +104,10 @@
 	color: #004682;
 }
 
+.count-number {
+	font-size: 50pt;
+}
+
 @media print {
 
 	body * {
