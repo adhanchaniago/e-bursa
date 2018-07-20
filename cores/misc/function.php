@@ -163,21 +163,18 @@
 	function getLokerCountReport() {
 		$conn = koneksi();
 		$data_out = [];
+		$date_now = date("Y-m-d");
 		
 		$query1 = "SELECT COUNT(id) AS total_loker FROM lowongan";
 		$process1 = mysqli_query($conn, $query1);
 		$data1 = mysqli_fetch_assoc($process1);
 
-		$query2 = "SELECT COUNT(id) AS total_loker FROM lowongan WHERE status = '1'";
-		$process2 = mysqli_query($conn, $query2);
-		$data2 = mysqli_fetch_assoc($process2);
-
-		$query3 = "SELECT COUNT(id) AS total_loker FROM lowongan WHERE status = '0' OR bann = '1'";
+		$query3 = "SELECT COUNT(id) AS total_loker FROM lowongan WHERE status = '0' OR bann = '1' OR tanggal_selesai <= '$date_now'";
 		$process3 = mysqli_query($conn, $query3);
 		$data3 = mysqli_fetch_assoc($process3);
 
 		$data_out['total'] = $data1['total_loker'];
-		$data_out['ongoing'] = $data2['total_loker'];
+		$data_out['ongoing'] = $data1['total_loker'] - $data3['total_loker'];
 		$data_out['closed'] = $data3['total_loker'];
 		return $data_out;
 	}

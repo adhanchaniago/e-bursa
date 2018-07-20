@@ -62,7 +62,8 @@
 									<a href="?page=detail-loker&id=<?php echo $value['id'] ?>"><?php echo $value['judul'] ?></a>
 									<span class="badge badge-success">Deadline <?php echo date("d M Y", strtotime($value['tanggal_selesai'])) ?></span>
 									<?php  
-										if ($value['status'] == 0) {
+										$date_now = date("Y-m-d");
+										if ($value['status'] == 0 || $date_now > $value['tanggal_selesai']) {
 											echo '<span class="badge badge-danger">Closed</span> ';
 										}
 										if ($value['bann'] == 1) {

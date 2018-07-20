@@ -121,11 +121,12 @@
 	<div class="row">
 		<div class="col-md-8 text-center">
 			<?php
+				$date_now = date("Y-m-d");
 				if ($lamar_status == 1) {
 					echo '<a href="#" class="btn btn-primary btn-lg btn-block disabled">ANDA SUDAH MELAMAR PADA LOKER INI !</a>';
 				} elseif ($data['bann'] == 1) {
 					echo '<a href="#" class="btn btn-danger btn-lg btn-block disabled">LOWONGAN KERJA DI BANNED !</a>';
-				} elseif ($data['status'] == 0) {
+				} elseif ($data['status'] == 0 || $date_now > $data['tanggal_selesai']) {
 					echo '<a href="#" class="btn btn-danger btn-lg btn-block disabled">LOWONGAN KERJA SUDAH DITUTUP !</a>';
 				} else {
 					echo '<a href="?page=lamar-kerja&id='.$data['id'].'" class="btn btn-success btn-lg btn-block">LAMAR SEKARANG !</a>';
