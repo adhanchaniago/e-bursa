@@ -61,14 +61,14 @@
 							</div>
 						</form>
 					</div>
-					<div class="col-md-4">
+					<!-- <div class="col-md-4">
 						<div class="card">
 							<div class="card-body">
 								<p>PERHATIAN!</p>
 								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis vero dignissimos, ipsam odio aspernatur deserunt iure consectetur veniam iusto in officia officiis ipsum repellendus eligendi dolorum. Tempore obcaecati iusto quia.
 							</div>
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>

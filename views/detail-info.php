@@ -20,16 +20,12 @@
 ?>
 
 <div class="row">
-	<div class="col-md-8">
+	<div class="col-md-9">
 		<h3 class="home-title"><?php echo $data['judul'] ?></h3>
 		<div><?php echo $data['konten'] ?></div>
 	</div>
-	<div class="col-md-4">
-		<div class="card">
-			<div class="card-body">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque doloremque laborum cumque ipsa quas id reprehenderit inventore, adipisci eum facilis ducimus mollitia dolore deleniti ex hic. Modi magni, quasi libero.</p>
-			</div>
-		</div>
+	<div class="col-md-3">
+		<?php include "views/partials/rightbar.php"; ?>
 	</div>
 </div><hr>
 
