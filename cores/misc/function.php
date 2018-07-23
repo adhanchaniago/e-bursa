@@ -176,6 +176,35 @@
 		$data_out['total'] = $data1['total_loker'];
 		$data_out['ongoing'] = $data1['total_loker'] - $data3['total_loker'];
 		$data_out['closed'] = $data3['total_loker'];
+
+		return $data_out;
+	}
+
+	function getLamaranCountReport($pencaker_id) {
+		$conn = koneksi();
+		$data_out = [];
+
+		$query1 = "SELECT COUNT(id) AS total_lamar FROM lamar WHERE profil_pencaker_id = '$pencaker_id'";
+		$proces1 = mysqli_query($conn, $query1) or die(mysqli_error($conn));
+		$data1 = mysqli_fetch_assoc($proces1);
+
+		$query2 = "SELECT COUNT(id) AS total_lamar FROM lamar WHERE profil_pencaker_id = '$pencaker_id' AND status = '0'";
+		$proces2 = mysqli_query($conn, $query2);
+		$data2 = mysqli_fetch_assoc($proces2);
+
+		$query3 = "SELECT COUNT(id) AS total_lamar FROM lamar WHERE profil_pencaker_id = '$pencaker_id' AND status = '1'";
+		$proces3 = mysqli_query($conn, $query3);
+		$data3 = mysqli_fetch_assoc($proces3);
+
+		$query4 = "SELECT COUNT(id) AS total_lamar FROM lamar WHERE profil_pencaker_id = '$pencaker_id' AND status = '2'";
+		$proces4 = mysqli_query($conn, $query4);
+		$data4 = mysqli_fetch_assoc($proces4);
+
+		$data_out['total'] = $data1['total_lamar'];
+		$data_out['waiting'] = $data2['total_lamar'];
+		$data_out['accept'] = $data3['total_lamar'];
+		$data_out['decline'] = $data4['total_lamar'];
+
 		return $data_out;
 	}
 

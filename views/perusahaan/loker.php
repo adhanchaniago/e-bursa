@@ -40,10 +40,11 @@
 										<td class="text-center"><?php echo date("d M Y", strtotime($value['tanggal_selesai'])) ?></td>
 										<td class="text-center">
 											<?php 
-												if ($value['status']==1) {
-													echo '<span class="badge badge-success">ON GOING</span>';
-												} else {
+												$date_now = date("Y-m-d");
+												if ($value['status'] == 0 || $date_now > $value['tanggal_selesai']) {
 													echo '<span class="badge badge-danger">CLOSED</span>';
+												} else {
+													echo '<span class="badge badge-success">ON GOING</span>';
 												}
 											?>
 										</td>
@@ -52,7 +53,7 @@
 												<a href="main.php?page=detail-loker&id=<?php echo $value['id'] ?>" class="btn btn-primary btn-sm" target="_blank">DETAIL</a>
 												<a href="?page=lihat-pelamar&id=<?php echo $value['id'] ?>" class="btn btn-primary btn-sm" target="_blank">PELAMAR</a>
 												<a href="#" class="btn btn-success btn-sm">UBAH</a>
-												<a href="?page=finis-loker&id=<?php echo $value['id'] ?>" class="btn btn-danger btn-sm <?php echo $value['status']=='0'?'disabled':'' ?>">TUTUP</a>
+												<a href="?page=finis-loker&id=<?php echo $value['id'] ?>" class="btn btn-danger btn-sm <?php echo $value['status']=='0'||$date_now>$value['tanggal_selesai']?'disabled':'' ?>">TUTUP</a>
 											</div>
 										</td>
 									</tr>

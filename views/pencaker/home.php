@@ -1,26 +1,64 @@
 <div class="row">
 	<div class="col-md-3">
-		<?php include "views/pencaker/partials/side-menu.php"; ?>
+		<?php  
+			include "views/pencaker/partials/side-menu.php";
+			$pencaker_id = pencakerProfID($_SESSION['user_id']);
+			$data = getLamaranCountReport($pencaker_id);
+		?>
 	</div>
 	<div class="col-md-9">
-		<div class="card">
-			<div class="card-body">
-				<h3 class="home-title">Selamat Datang</h3>	
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi facere rerum perferendis pariatur consectetur perspiciatis numquam aspernatur, autem totam corporis dicta non culpa architecto, impedit ipsa, nihil maxime in doloremque!
-				</p>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure adipisci possimus iste voluptatum aspernatur! Alias ad nobis, corporis officiis. Molestiae tempore odio numquam consequatur ab fuga quo, dolore fugit eveniet!
-				</p>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet cumque non, perferendis rerum, fugit cupiditate sequi necessitatibus numquam ex at repudiandae nisi totam dolores debitis modi? Sequi, tenetur pariatur voluptatibus.
-				</p>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem non velit in eaque, nulla cumque itaque, necessitatibus unde officiis, nam eveniet soluta est neque, asperiores et molestias aspernatur dolores repellendus.
-				</p>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, culpa assumenda porro voluptas deleniti aliquam itaque debitis fugiat ipsam officia commodi non, optio autem deserunt corporis nihil illum. Veritatis, molestias.
-				</p>
+		<div class="row">
+			<div class="col-md-3">
+				<div class="card text-white bg-primary mb-3">
+					<div class="card-header text-center">
+						<strong>LAMARAN</strong>
+					</div>
+					<div class="card-body text-center count-number">
+						<?php echo $data['total'] ?>
+					</div>
+					<div class="card-footer text-center">
+						<strong>TOTAL</strong>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="card text-white bg-warning mb-3">
+					<div class="card-header text-center">
+						<strong>LAMARAN</strong>
+					</div>
+					<div class="card-body text-center count-number">
+						<?php echo $data['waiting'] ?>
+					</div>
+					<div class="card-footer text-center">
+						<strong>WAITING</strong>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="card text-white bg-success mb-3">
+					<div class="card-header text-center">
+						<strong>LAMARAN</strong>
+					</div>
+					<div class="card-body text-center count-number">
+						<?php echo $data['accept'] ?>
+					</div>
+					<div class="card-footer text-center">
+						<strong>DITERIMA</strong>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="card text-white bg-danger mb-3">
+					<div class="card-header text-center">
+						<strong>LAMARAN</strong>
+					</div>
+					<div class="card-body text-center count-number">
+						<?php echo $data['decline'] ?>
+					</div>
+					<div class="card-footer text-center">
+						<strong>DITOLAK</strong>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

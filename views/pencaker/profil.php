@@ -85,14 +85,6 @@
 									</div>
 								</form>
 							</div>
-							<div class="col-md-4">
-								<!-- <div class="card">
-									<div class="card-body">
-										<p>PERHATIAN!</p>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis vero dignissimos, ipsam odio aspernatur deserunt iure consectetur veniam iusto in officia officiis ipsum repellendus eligendi dolorum. Tempore obcaecati iusto quia.
-									</div>
-								</div> -->
-							</div>
 						</div>
 					</div>
 				</div>
@@ -105,7 +97,7 @@
 						<div class="row">
 							<div class="col-md-5">
 								<p><strong>PENDIDIKAN FORMAL :</strong></p>
-								<form action="cores/pencaker/profil/tambah-pendidikan-formal.php" method="POST">
+								<form action="cores/pencaker/profil/tambah-pendidikan-formal.php" method="POST" enctype="multipart/form-data">
 									<input type="hidden" name="user_id" value="<?php echo $_SESSION["user_id"] ?>">
 									<div class="form-group">
 										<label for="tingkat">Tingkat Pendidikan</label>
@@ -141,6 +133,11 @@
 										<label for="th_lulus">Tahun Lulus</label>
 										<input type="text" class="form-control" name="th_lulus" id="th_lulus">
 									</div>
+									<div class="form-group">
+										<label for="lampiran">Lampiran</label>
+										<input type="file" class="form-control" name="lampiran" id="lampiran">
+										<small>*Lampiran merupakan hasil scan dari ijazah asli dengan format file jpg/jpeg.</small>
+									</div><hr>
 									<div class="form-group text-right">
 										<button type="reset" class="btn btn-sm btn-default">RESET</button>
 										<button type="submit" class="btn btn-success">SIMPAN</button>
@@ -181,8 +178,10 @@
 													<td class="text-center"><?php echo $value['jurusan'] ?></td>
 													<td class="text-center"><?php echo $value['tahun_masuk'].'/'.$value['tahun_lulus'] ?></td>
 													<td>
-														<a href="" class="btn btn-success btn-sm">E</a>&nbsp;
-														<a href="" class="btn btn-danger btn-sm">D</a>
+														<div class="btn-group">
+															<a href="http://localhost/e-bursa/assets/img/lampiran/pendidikan_formal/<?php echo $value['lampiran'] ?>" class="btn btn-success btn-sm" target="_blank">Lampiran</a>
+															<a href="" class="btn btn-danger btn-sm">Hapus</a>
+														</div>
 													</td>
 												</tr>
 											<?php
@@ -196,7 +195,7 @@
 						<div class="row">
 							<div class="col-md-5">
 								<p><strong>PENDIDIKAN NON FORMAL :</strong></p>
-								<form action="cores/pencaker/profil/tambah-pendidikan-nonformal.php" method="POST">
+								<form action="cores/pencaker/profil/tambah-pendidikan-nonformal.php" method="POST" enctype="multipart/form-data">
 									<input type="hidden" name="user_id" value="<?php echo $_SESSION["user_id"] ?>">
 									<div class="from-group">
 										<label for="nama_kegiatan">Nama Kegiatan</label>
@@ -218,6 +217,11 @@
 										<label for="tempat">Tempat Penyelenggaraan Kegiatan</label>
 										<input type="text" name="tempat" id="tempat" class="form-control">
 									</div>
+									<div class="form-group">
+										<label for="lampiran">Lampiran</label>
+										<input type="file" class="form-control" name="lampiran" id="lampiran">
+										<small>*Lampiran merupakan hasil scan dari sertifikat asli dengan format file jpg/jpeg.</small>
+									</div><hr>
 									<div class="form-group text-right">
 										<button type="reset" class="btn btn-sm btn-default">RESET</button>
 										<button type="submit" class="btn btn-success">SIMPAN</button>
@@ -257,8 +261,10 @@
 													<td class="text-center"><?php echo $value['tanggal_selesai'] ?></td>
 													<td class="text-center"><?php echo $value['tempat_kegiatan'] ?></td>
 													<td>
-														<a href="" class="btn btn-success btn-sm">E</a>&nbsp;
-														<a href="" class="btn btn-danger btn-sm">D</a>
+														<div class="btn-group">
+															<a href="http://localhost/e-bursa/assets/img/lampiran/pendidikan_nonformal/<?php echo $value['lampiran'] ?>" class="btn btn-success btn-sm" target="_blank">Lampiran</a>&nbsp;
+															<a href="" class="btn btn-danger btn-sm">Hapus</a>
+														</div>
 													</td>
 												</tr>
 											<?php
@@ -279,7 +285,7 @@
 						<p>Silahkan isi data berikut dengan data yang valid:</p> <hr>
 						<div class="row">
 							<div class="col-md-8">
-								<form action="cores/pencaker/profil/tambah-pengalaman-kerja.php" method="POST">
+								<form action="cores/pencaker/profil/tambah-pengalaman-kerja.php" method="POST" enctype="multipart/form-data">
 									<input type="hidden" name="user_id" value="<?php echo $_SESSION["user_id"] ?>">
 									<div class="from-group">
 										<label for="nama">Nama Perusahaan</label>
@@ -305,19 +311,16 @@
 										<label for="keluar">Tanggal Keluar</label>
 										<input type="text" name="keluar" id="keluar" class="form-control tanggal_pl" readonly>
 									</div>
+									<div class="form-group">
+										<label for="lampiran">Lampiran</label>
+										<input type="file" class="form-control" name="lampiran" id="lampiran">
+										<small>*Lampiran merupakan hasil scan dari surat pengalaman kerja  dengan format file jpg/jpeg.</small>
+									</div><hr>
 									<div class="form-group text-right">
 										<button type="reset" class="btn btn-sm btn-default">RESET</button>
 										<button type="submit" class="btn btn-success">SIMPAN</button>
 									</div>
 								</form>
-							</div>
-							<div class="col-md-4">
-								<!-- <div class="card">
-									<div class="card-body">
-										<p>PERHATIAN!</p>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis vero dignissimos, ipsam odio aspernatur deserunt iure consectetur veniam iusto in officia officiis ipsum repellendus eligendi dolorum. Tempore obcaecati iusto quia.
-									</div>
-								</div> -->
 							</div>
 						</div><hr>
 						<div class="row">
@@ -355,8 +358,10 @@
 													<td><?php echo $value['tanggal_masuk'] ?></td>
 													<td><?php echo $value['tanggal_keluar'] ?></td>
 													<td>
-														<a href="" class="btn btn-success btn-sm">E</a>&nbsp;
-														<a href="" class="btn btn-danger btn-sm">D</a>
+														<div class="btn-group">
+															<a href="http://localhost/e-bursa/assets/img/lampiran/pengalaman_kerja/<?php echo $value['lampiran'] ?>" class="btn btn-success btn-sm" target="_blank">Lampiran</a>
+															<a href="" class="btn btn-danger btn-sm">Hapus</a>
+														</div>
 													</td>
 												</tr>
 											<?php

@@ -17,7 +17,8 @@
 							FROM profil_perusahaan, lamar, lowongan 
 							WHERE lamar.lowongan_id = lowongan.id
 							AND lowongan.profil_perusahaan_id = profil_perusahaan.id 
-							AND lamar.profil_pencaker_id = '$user_id'
+							AND lamar.profil_pencaker_id = '$user_id' 
+							ORDER BY lamar.tanggal_lamar DESC
 						";
 						$process = mysqli_query($conn, $query);
 						while($row = mysqli_fetch_array($process)) {

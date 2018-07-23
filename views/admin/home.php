@@ -8,7 +8,7 @@
 	<div class="col-md-9">
 		<div class="row">
 			<div class="col-md-4">
-				<div class="card">
+				<div class="card text-white bg-primary mb-3">
 					<div class="card-header text-center">
 						<strong>TOTAL KESELURUHAN</strong>
 					</div>
@@ -21,7 +21,7 @@
 				</div>
 			</div>
 			<div class="col-md-4">
-				<div class="card">
+				<div class="card text-white bg-success mb-3">
 					<div class="card-header text-center">
 						<strong>LOWONGAN KERJA</strong>
 					</div>
@@ -34,7 +34,7 @@
 				</div>
 			</div>
 			<div class="col-md-4">
-				<div class="card">
+				<div class="card text-white bg-danger mb-3">
 					<div class="card-header text-center">
 						<strong>LOWONGAN KERJA</strong>
 					</div>
