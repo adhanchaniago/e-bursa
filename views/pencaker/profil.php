@@ -180,7 +180,7 @@
 													<td>
 														<div class="btn-group">
 															<a href="http://localhost/e-bursa/assets/img/lampiran/pendidikan_formal/<?php echo $value['lampiran'] ?>" class="btn btn-success btn-sm" target="_blank">Lampiran</a>
-															<a href="" class="btn btn-danger btn-sm">Hapus</a>
+															<a href="?page=hapus-pendidikan-formal&id=<?php echo $value['id'] ?>" class="btn btn-danger btn-sm">Hapus</a>
 														</div>
 													</td>
 												</tr>
@@ -263,7 +263,7 @@
 													<td>
 														<div class="btn-group">
 															<a href="http://localhost/e-bursa/assets/img/lampiran/pendidikan_nonformal/<?php echo $value['lampiran'] ?>" class="btn btn-success btn-sm" target="_blank">Lampiran</a>&nbsp;
-															<a href="" class="btn btn-danger btn-sm">Hapus</a>
+															<a href="?page=hapus-pendidikan-nonformal&id=<?php echo $value['id'] ?>" class="btn btn-danger btn-sm">Hapus</a>
 														</div>
 													</td>
 												</tr>
@@ -360,7 +360,7 @@
 													<td>
 														<div class="btn-group">
 															<a href="http://localhost/e-bursa/assets/img/lampiran/pengalaman_kerja/<?php echo $value['lampiran'] ?>" class="btn btn-success btn-sm" target="_blank">Lampiran</a>
-															<a href="" class="btn btn-danger btn-sm">Hapus</a>
+															<a href="?page=hapus-pengalaman-kerja&id=<?php echo $value['id'] ?>" class="btn btn-danger btn-sm">Hapus</a>
 														</div>
 													</td>
 												</tr>

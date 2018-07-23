@@ -48,6 +48,12 @@
 					include "views/pencaker/profil.php";
 				} elseif ($page == 'lamaran') {
 					include "views/pencaker/lamaran.php";
+				} elseif ($page == 'hapus-pendidikan-formal') {
+					include "views/pencaker/profil/hapus-pendidikan-formal.php";
+				} elseif ($page == 'hapus-pendidikan-nonformal') {
+					include "views/pencaker/profil/hapus-pendidikan-nonformal.php";
+				} elseif ($page == 'hapus-pengalaman-kerja') {
+					include "views/pencaker/profil/hapus-pengalaman-kerja.php";
 				}
 
 			}
