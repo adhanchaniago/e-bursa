@@ -71,6 +71,7 @@
 							<th>Alamat</th>
 							<th>Jurusan</th>
 							<th>Tahun Lulus</th>
+							<th>Lampiran</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -90,6 +91,7 @@
 								<td><?php echo $value['alamat_sekolah'] ?></td>
 								<td class="text-center"><?php echo $value['jurusan'] ?></td>
 								<td class="text-center"><?php echo $value['tahun_lulus'] ?></td>
+								<td><a href="http://localhost/e-bursa/assets/img/lampiran/pendidikan_formal/<?php echo $value['lampiran'] ?>" class="btn btn-success btn-sm" target="_blank">Lampiran</a></td>
 							</tr>
 						<?php  
 							}
@@ -110,6 +112,7 @@
 							<th>Tempat</th>
 							<th>Tanggal Mulai</th>
 							<th>Tanggal Selesai</th>
+							<th>Lampiran</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -129,6 +132,7 @@
 								<td><?php echo $value['tempat_kegiatan'] ?></td>
 								<td class="text-center"><?php echo $value['tanggal_mulai'] ?></td>
 								<td class="text-center"><?php echo $value['tanggal_selesai'] ?></td>
+								<td><a href="http://localhost/e-bursa/assets/img/lampiran/pendidikan_nonformal/<?php echo $value['lampiran'] ?>" class="btn btn-success btn-sm" target="_blank">Lampiran</a></td>
 							</tr>
 						<?php  
 							}
@@ -150,6 +154,7 @@
 							<th>Deskripsi Jabatan</th>
 							<th>Tanggal Masuk</th>
 							<th>Tanggal Berhenti</th>
+							<th>Lampiran</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -169,7 +174,8 @@
 								<td><?php echo $value['jabatan'] ?></td>
 								<td><?php echo $value['deskripsi_jabatan'] ?></td>
 								<td class="text-center"><?php echo $value['tanggal_masuk'] ?></td>
-								<td class="text-center"><?php echo $value['tanggal_berhenti'] ?></td>
+								<td class="text-center"><?php echo $value['tanggal_keluar'] ?></td>
+								<td><a href="http://localhost/e-bursa/assets/img/lampiran/pengalaman_kerja/<?php echo $value['lampiran'] ?>" class="btn btn-success btn-sm" target="_blank">Lampiran</a></td>
 							</tr>
 						<?php  
 							}
