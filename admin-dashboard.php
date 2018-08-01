@@ -26,6 +26,7 @@
 	<link rel="stylesheet" href="assets/vendors/datatables/datatables.min.css">
 	<link rel="stylesheet" href="assets/vendors/air-datepicker/dist/css/datepicker.min.css">
 	<link rel="stylesheet" href="assets/css/app.css">
+	<script src="assets/vendors/jquery/js/jquery.min.js"></script>
 </head>
 <body>
 	<?php include "views/partials/admin-navbar.php"; ?>
@@ -63,6 +64,10 @@
 					include "views/admin/loker/banned.php";
 				} elseif ($page == 'statik-loker') {
 					include "views/admin/loker/get-statik-loker.php";
+				} elseif ($page == 'print-user-akun') {
+					include "views/admin/laporan/print-user-akun.php";
+				} elseif ($page == 'print-loker') {
+					include "views/admin/laporan/print-loker.php";
 				}
 
 			}
@@ -77,7 +82,6 @@
 		</div>
 	</footer>
 
-	<script src="assets/vendors/jquery/js/jquery.min.js"></script>
 	<script src="assets/vendors/bootstrap/js/bootstrap.min.js"></script>
 	<script src="assets/vendors/datatables/datatables.min.js"></script>
 	<script src="assets/vendors/air-datepicker/dist/js/datepicker.min.js"></script>
@@ -131,6 +135,11 @@
 								],
 								borderWidth: 1
 							}]
+						},
+						options: {
+							animation: {
+								duration: 0
+							}
 						}
 					});
 				}
@@ -210,6 +219,11 @@
 								],
 								borderWidth: 1
 							}]
+						},
+						options: {
+							animation: {
+								duration: 0
+							}
 						}
 					});
 				}

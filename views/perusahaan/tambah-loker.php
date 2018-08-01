@@ -9,7 +9,7 @@
 				<p>Silahkan isi data berikut dengan data yang valid:</p> <hr>
 				<div class="row">
 					<div class="col-md-8">
-						<form action="cores/perusahaan/loker/tambah-loker-process.php" method="POST">
+						<form action="cores/perusahaan/loker/tambah-loker-process.php" method="POST" enctype="multipart/form-data">
 							<input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id'] ?>">
 							<div class="form-group">
 								<label for="title">Title</label>
@@ -34,6 +34,10 @@
 							<div class="form-group">
 								<label for="selesai">Tanggal Selesai</label>
 								<input type="text" name="selesai" id="selesai" class="form-control tanggal_pl" readonly>
+							</div>
+							<div class="form-group">
+								<label for="logo">Gambar</label>
+								<input type="file" name="gambar" id="gambar" class="form-control">
 							</div>
 							<div class="form-group text-right">
 								<button type="reset" class="btn btn-sm btn-default">RESET</button>

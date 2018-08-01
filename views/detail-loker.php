@@ -32,12 +32,13 @@
 				<button type="button" class="btn btn-sm btn-primary print-button" onclick="window.print()">PRINT</button>
 			</span>
 		</h3>
+		<div><img src="assets/img/loker/<?php echo $data['gambar'] ?>" height="300"></div><hr>
 		<div class="loker-sub-head">DESKRIPSI PEKERJAAN :</div>
 		<div><?php echo $data['deskripsi_pekerjaan'] ?></div><hr>
 		<div class="loker-sub-head">DESKRIPSI PERSYARATAN :</div>
 		<div><?php echo $data['deskripsi_persyaratan'] ?></div><hr>
 		<div class="loker-sub-head">GAJI :</div>
-		<div>IDR <?php echo number_format($data['gaji'], 0) ?></div>
+		<div><?php echo $data['gaji'] ?></div>
 	</div>
 	<div class="col-md-4">
 		<div class="card">

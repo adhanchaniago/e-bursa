@@ -18,6 +18,7 @@
 									<th>Mulai</th>
 									<th>Selesai</th>
 									<th>Status</th>
+									<th>Gambar</th>
 									<th>Aksi</th>
 								</tr>
 							</thead>
@@ -35,7 +36,7 @@
 									<tr>
 										<td class="text-center"><?php echo $key+1; ?></td>
 										<td><?php echo $value['judul'] ?></td>
-										<td class="text-center"><?php echo 'IDR '.number_format($value['gaji'], 0) ?></td>
+										<td class="text-center"><?php echo $value['gaji'] ?></td>
 										<td class="text-center"><?php echo date("d M Y", strtotime($value['tanggal_mulai'])) ?></td>
 										<td class="text-center"><?php echo date("d M Y", strtotime($value['tanggal_selesai'])) ?></td>
 										<td class="text-center">
@@ -47,6 +48,9 @@
 													echo '<span class="badge badge-success">ON GOING</span>';
 												}
 											?>
+										</td>
+										<td>
+											<img src="assets/img/loker/<?php echo $value['gambar'] ?>" height="150">
 										</td>
 										<td>
 											<div class="btn-group" role="group">
