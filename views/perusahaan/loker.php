@@ -56,7 +56,7 @@
 											<div class="btn-group" role="group">
 												<a href="main.php?page=detail-loker&id=<?php echo $value['id'] ?>" class="btn btn-primary btn-sm" target="_blank">DETAIL</a>
 												<a href="?page=lihat-pelamar&id=<?php echo $value['id'] ?>" class="btn btn-primary btn-sm" target="_blank">PELAMAR</a>
-												<a href="#" class="btn btn-success btn-sm">UBAH</a>
+												<a href="?page=ubah-loker&id=<?php echo $value['id'] ?>" class="btn btn-success btn-sm">UBAH</a>
 												<a href="?page=finis-loker&id=<?php echo $value['id'] ?>" class="btn btn-danger btn-sm <?php echo $value['status']=='0'||$date_now>$value['tanggal_selesai']?'disabled':'' ?>">TUTUP</a>
 											</div>
 										</td>

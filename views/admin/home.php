@@ -52,7 +52,7 @@
 				<div class="card">
 					<div class="card-header">
 						<strong>GRAFIK JUMLAH LOKER PADA TAHUN <?php echo date("Y") ?></strong>
-						<a href="?page=print-loker" class="btn btn-primary float-right btn-sm" target="_blank">PRINT</a>
+						<a href="?page=print-loker" class="btn btn-primary float-right btn-sm" target="_blank">PRINT LAPORAN</a>
 					</div>
 					<div class="card-body">
 						<canvas id="chart-loker" width="100%"></canvas>
@@ -65,7 +65,7 @@
 				<div class="card">
 					<div class="card-header">
 						<strong>GRAFIK JUMLAH AKUN YANG TERDAFTAR PADA TAHUN <?php echo date("Y") ?></strong>
-						<a href="?page=print-user-akun" class="btn btn-primary float-right btn-sm" target="_blank">PRINT</a>
+						<a href="?page=print-user-akun" class="btn btn-primary float-right btn-sm" target="_blank">PRINT LAPORAN</a>
 					</div>
 					<div class="card-body">
 						<canvas id="chart-akun" width="100%"></canvas>

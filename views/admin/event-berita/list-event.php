@@ -39,11 +39,14 @@
 									<td class="text-center"><?php echo $value['kategori']; ?></td>
 									<td class="text-center"><?php echo date('d M Y', strtotime($value['tanggal'])); ?></td>
 									<td class="text-center"><?php echo $value['status']==1?'Published':'Hiden'; ?></td>
-									<td class="text-center"><?php echo $value['konten']; ?></td>
+									<td class="text-center"><?php echo strlimit($value['konten'], 10); ?></td>
 									<td class="text-center">
-										<a href="?page=publish&id=<?php echo $value['id'] ?>&val=<?php echo $value['status'] ?>" class="btn btn-sm btn-<?php echo $value['status']==1?'danger':'success' ?>">
-											<?php echo $value['status']==1?'Hide':'Publish' ?>
-										</a>
+										<div class="btn-group">
+											<a href="?page=ubah-event&id=<?php echo $value['id'] ?>" class="btn btn-sm btn-success">Ubah</a>
+											<a href="?page=publish&id=<?php echo $value['id'] ?>&val=<?php echo $value['status'] ?>" class="btn btn-sm btn-<?php echo $value['status']==1?'danger':'success' ?>">
+												<?php echo $value['status']==1?'Hide':'Publish' ?>
+											</a>
+										</div>
 									</td>
 								</tr>
 							<?php

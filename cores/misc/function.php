@@ -208,4 +208,16 @@
 		return $data_out;
 	}
 
+	function strlimit($text, $limit)
+	{
+		$output = strip_tags($text);
+		if (str_word_count($output, 0) > $limit) {
+			$words = str_word_count($output, 2);
+			$pos = array_keys($words);
+			$output = substr($output, 0, $pos[$limit]) . '...';
+		}
+
+		return $output;
+	}
+
 ?>

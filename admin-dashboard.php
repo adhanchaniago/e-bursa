@@ -54,6 +54,8 @@
 					include "views/admin/user-akun/aktivasi.php";
 				} elseif ($page == 'event') {
 					include "views/admin/event-berita/tambah-event.php";
+				} elseif ($page == 'ubah-event') {
+					include "views/admin/event-berita/ubah-event.php";
 				} elseif ($page == 'list-event') {
 					include "views/admin/event-berita/list-event.php";
 				} elseif ($page == 'publish') {
