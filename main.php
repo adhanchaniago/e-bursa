@@ -60,6 +60,8 @@
 					include "views/profil-pencaker.php";
 				} elseif ($page == 'profil-perusahaan') {
 					include "views/profil-perusahaan.php";
+				} elseif ($page == 'kontak') {
+					include "views/kontak.php";
 				}
 
 			}

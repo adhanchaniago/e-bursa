@@ -35,7 +35,7 @@
 							<tr>
 								<td class="text-center"><?php echo $key+1 ?></td>
 								<td><?php echo $value['judul'] ?></td>
-								<td class="text-center">IDR <?php echo number_format($value['gaji'], 0) ?></td>
+								<td class="text-center">IDR <?php echo $value['gaji'] ?></td>
 								<td class="text-center"><?php echo date('d M Y', strtotime($value['tanggal_mulai'])) ?></td>
 								<td class="text-center"><?php echo date('d M Y', strtotime($value['tanggal_selesai'])) ?></td>
 								<td class="text-center">

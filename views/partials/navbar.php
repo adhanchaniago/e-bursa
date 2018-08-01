@@ -11,10 +11,7 @@
 					<a class="nav-link" href="/e-bursa">Beranda</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Tentang</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">Kontak</a>
+					<a class="nav-link" href="?page=kontak">Kontak</a>
 				</li>
 			</ul>
 			<?php  
