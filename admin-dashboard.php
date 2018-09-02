@@ -190,7 +190,7 @@
 								borderWidth: 1
 							},{
 								label: 'Perusahaan',
-								data: data.pencaker,
+								data: data.perusahaan,
 								backgroundColor: [
 									'rgba(255, 99, 132, 0.2)',
 									'rgba(255, 99, 132, 0.2)',
