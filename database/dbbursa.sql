@@ -44,14 +44,15 @@ CREATE TABLE `hak_akses` (
   `keterangan` varchar(30) NOT NULL,
   `dibuat_pada` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 /*Data for the table `hak_akses` */
 
 insert  into `hak_akses`(`id`,`slug`,`nama_akses`,`keterangan`,`dibuat_pada`) values 
 (1,'admin','Administrator','-','2018-05-07'),
 (2,'pencaker','Pencari Kerja','-','2018-05-07'),
-(3,'perusahaan','Perusahaan','-','2018-05-07');
+(3,'perusahaan','Perusahaan','-','2018-05-07'),
+(4,'super_su','Web Master','-','2018-09-11');
 
 /*Table structure for table `info_berita` */
 
@@ -258,22 +259,23 @@ CREATE TABLE `profil_admin` (
   `user_akun_id` int(11) NOT NULL,
   `nip` varchar(20) NOT NULL,
   `nama` varchar(100) NOT NULL,
-  `jenis_kelamin` enum('Pria','Wanita') NOT NULL,
-  `tempat_lahir` varchar(20) NOT NULL,
-  `tanggal_lahir` date NOT NULL,
-  `agama` enum('Islam','Katolik','Protestan','Hindu','Buddha','Lain-Lain') NOT NULL,
-  `alamat` text NOT NULL,
-  `telepon` varchar(12) NOT NULL,
-  `foto` varchar(100) NOT NULL DEFAULT 'default.png',
+  `jenis_kelamin` enum('Pria','Wanita') DEFAULT NULL,
+  `tempat_lahir` varchar(20) DEFAULT NULL,
+  `tanggal_lahir` date DEFAULT NULL,
+  `agama` enum('Islam','Katolik','Protestan','Hindu','Buddha','Lain-Lain') DEFAULT NULL,
+  `alamat` text,
+  `telepon` varchar(12) DEFAULT NULL,
+  `foto` varchar(100) DEFAULT 'default.png',
   `dibuat_pada` date NOT NULL,
   PRIMARY KEY (`id`),
   KEY `user_akun_id` (`user_akun_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 /*Data for the table `profil_admin` */
 
 insert  into `profil_admin`(`id`,`user_akun_id`,`nip`,`nama`,`jenis_kelamin`,`tempat_lahir`,`tanggal_lahir`,`agama`,`alamat`,`telepon`,`foto`,`dibuat_pada`) values 
-(1,1,'131400036','Ridwan Kurnia','Pria','Padang','1984-04-17','Islam','Pariaman','081268280648','f830e3bb7277cd0356bb.png','2018-05-12');
+(1,1,'131400036','Ridwan Kurnia','Pria','Padang','1984-04-17','Islam','Pariaman','081268280648','f830e3bb7277cd0356bb.png','2018-05-12'),
+(2,44,'1314123123','Boy Sand',NULL,NULL,NULL,NULL,NULL,NULL,'default.png','2018-12-09');
 
 /*Table structure for table `profil_pencaker` */
 
@@ -363,16 +365,18 @@ CREATE TABLE `user_akun` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`),
   KEY `hak_akses_id` (`hak_akses_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=latin1;
 
 /*Data for the table `user_akun` */
 
 insert  into `user_akun`(`id`,`hak_akses_id`,`username`,`password`,`status`,`aktivasi`,`dibuat_pada`) values 
-(1,1,'admin','21232f297a57a5a743894a0e4a801fc3',1,1,'2018-05-11'),
+(1,1,'admin','827ccb0eea8a706c4c34a16891f84e7b',1,1,'2018-05-11'),
 (38,3,'ami1234','20fd35afc7ae7cb8cc5c7a31b1101f3e',1,1,'2018-07-08'),
 (39,2,'kurnia','fbce00b605288f8eefc9b30cf542b60c',1,1,'2018-08-09'),
 (40,3,'CV. Cengkareng','fbce00b605288f8eefc9b30cf542b60c',1,1,'2018-08-09'),
-(41,3,'PT. SJS','fbce00b605288f8eefc9b30cf542b60c',1,1,'2018-08-10');
+(41,3,'PT. SJS','fbce00b605288f8eefc9b30cf542b60c',1,1,'2018-08-10'),
+(42,4,'webmaster','50a9c7dbf0fa09e8969978317dca12e8',1,1,'2018-09-12'),
+(44,1,'admin2','c84258e9c39059a89ab77d846ddab909',1,1,'2018-12-09');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
