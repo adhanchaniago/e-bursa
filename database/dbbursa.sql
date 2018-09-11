@@ -370,7 +370,7 @@ CREATE TABLE `user_akun` (
 /*Data for the table `user_akun` */
 
 insert  into `user_akun`(`id`,`hak_akses_id`,`username`,`password`,`status`,`aktivasi`,`dibuat_pada`) values 
-(1,1,'admin','827ccb0eea8a706c4c34a16891f84e7b',1,1,'2018-05-11'),
+(1,1,'admin','21232f297a57a5a743894a0e4a801fc3 ',1,1,'2018-05-11'),
 (38,3,'ami1234','20fd35afc7ae7cb8cc5c7a31b1101f3e',1,1,'2018-07-08'),
 (39,2,'kurnia','fbce00b605288f8eefc9b30cf542b60c',1,1,'2018-08-09'),
 (40,3,'CV. Cengkareng','fbce00b605288f8eefc9b30cf542b60c',1,1,'2018-08-09'),
