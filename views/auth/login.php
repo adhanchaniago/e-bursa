@@ -14,8 +14,9 @@
 						<input type="password" class="form-control" name="password">
 					</div> 
 					<div>&nbsp;</div>
-					<div class="form-group">
-						<button type="submit" class="btn btn-block btn-success">LOGIN</button>
+					<div class="form-group text-center">
+						<button type="submit" class="btn btn-block btn-success">LOGIN</button><br>
+						<a href="?page=lupa-password">Lupa Password ?</a>
 					</div>
 				</form>
 			</div>

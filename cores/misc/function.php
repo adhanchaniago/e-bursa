@@ -5,6 +5,15 @@
 
 	// declare all needed function
 
+	function url(){
+		return sprintf(
+			"%s://%s%s",
+			isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? 'https' : 'http',
+			$_SERVER['SERVER_NAME'],
+			$_SERVER['REQUEST_URI']
+		);
+	}
+
 	function getSlugHakAkses($id) {
 		$conn = koneksi();
 		$sql = "SELECT slug FROM hak_akses WHERE id = '$id'";

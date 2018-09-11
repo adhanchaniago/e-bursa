@@ -38,8 +38,12 @@
 					include "views/auth/login.php";
 				} elseif ($page == 'daftar') {
 					include "views/auth/daftar.php";
+				} elseif ($page == 'lupa-password') {
+					include "views/auth/lupa.php";
 				} elseif ($page == 'aktivasi') {
 					include "views/auth/aktivasi.php";
+				} elseif ($page == 'reset-password') {
+					include "views/auth/reset.php";
 				} elseif ($page == 'info') {
 					include "views/info.php";
 				} elseif ($page == 'loker') {
